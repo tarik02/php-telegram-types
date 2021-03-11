@@ -1,0 +1,40 @@
+{
+    "name": "tarik02/telegram-types",
+    "description": "Auto-generated types for Telegram Bots written in PHP.",
+    "keywords": [
+        "telegram"
+    ],
+    "license": "MIT",
+    "extra": {
+        "telegram-api": {
+            "template": "https://raw.githubusercontent.com/ark0f/tg-bot-api/%s/custom.json",
+            "version": "b1b91039303ee970087f65854bc91bca583092bc"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "illuminate/support": "^8.29",
+        "jenssegers/blade": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tarik02\\Telegram\\Collections\\": "src/Collections/",
+            "Tarik02\\Telegram\\Contracts\\": "src/Contracts/",
+            "Tarik02\\Telegram\\Entities\\": "src/Entities/",
+            "Tarik02\\Telegram\\Methods\\": "src/Methods/",
+            "Tarik02\\Telegram\\Traits\\": "src/Traits/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tarik02\\TelegramTypesGenerator\\": "generator/"
+        }
+    },
+    "scripts": {
+        "generate": [
+            "@php generator/index.php"
+        ]
+    }
+}
