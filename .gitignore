@@ -1,0 +1,7 @@
+/generator
+/vendor
+
+# github-actions
+/Dockerfile
+/docker_tag
+/output.log
