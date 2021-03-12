@@ -161,7 +161,7 @@ final class TypesGenerator
 
                 $this->generateCollection(
                     $entity['name'] . 'Collection',
-                    '\Tarik02\Telegram\Types\\' . $entity['name']
+                    '\Tarik02\Telegram\Entities\\' . $entity['name']
                 );
             }
         }
