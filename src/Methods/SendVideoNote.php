@@ -55,6 +55,7 @@ class SendVideoNote extends Method implements \Tarik02\Telegram\Methods\HasRequi
     public function videoNote()
     {
         $source = $this->payload['video_note'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['video_note'];
     }
@@ -69,6 +70,8 @@ class SendVideoNote extends Method implements \Tarik02\Telegram\Methods\HasRequi
     {
         $payload = $this->payload;
         if ($videoNote instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['video_note'] = $videoNote->toPayload();
+        } elseif ($videoNote instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['video_note'] = $videoNote->toPayload();
         } elseif ($videoNote !== null) {
             $payload['video_note'] = $videoNote;
@@ -135,6 +138,7 @@ class SendVideoNote extends Method implements \Tarik02\Telegram\Methods\HasRequi
             return null;
         }
         $source = $this->payload['thumb'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['thumb'];
     }
@@ -149,6 +153,8 @@ class SendVideoNote extends Method implements \Tarik02\Telegram\Methods\HasRequi
     {
         $payload = $this->payload;
         if ($thumb instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['thumb'] = $thumb->toPayload();
+        } elseif ($thumb instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['thumb'] = $thumb->toPayload();
         } elseif ($thumb !== null) {
             $payload['thumb'] = $thumb;

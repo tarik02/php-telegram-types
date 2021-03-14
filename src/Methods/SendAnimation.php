@@ -55,6 +55,7 @@ class SendAnimation extends Method implements \Tarik02\Telegram\Methods\HasRequi
     public function animation()
     {
         $source = $this->payload['animation'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['animation'];
     }
@@ -69,6 +70,8 @@ class SendAnimation extends Method implements \Tarik02\Telegram\Methods\HasRequi
     {
         $payload = $this->payload;
         if ($animation instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['animation'] = $animation->toPayload();
+        } elseif ($animation instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['animation'] = $animation->toPayload();
         } elseif ($animation !== null) {
             $payload['animation'] = $animation;
@@ -158,6 +161,7 @@ class SendAnimation extends Method implements \Tarik02\Telegram\Methods\HasRequi
             return null;
         }
         $source = $this->payload['thumb'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['thumb'];
     }
@@ -172,6 +176,8 @@ class SendAnimation extends Method implements \Tarik02\Telegram\Methods\HasRequi
     {
         $payload = $this->payload;
         if ($thumb instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['thumb'] = $thumb->toPayload();
+        } elseif ($thumb instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['thumb'] = $thumb->toPayload();
         } elseif ($thumb !== null) {
             $payload['thumb'] = $thumb;

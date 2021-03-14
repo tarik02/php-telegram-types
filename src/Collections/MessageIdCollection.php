@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class MessageIdCollection
  *
- * @method MessageIdCollection push(\Tarik02\Telegram\Types\MessageId $item)
- * @method \Tarik02\Telegram\Types\MessageId get(int $index)
+ * @method MessageIdCollection push(\Tarik02\Telegram\Entities\MessageId $item)
+ * @method \Tarik02\Telegram\Entities\MessageId get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\MessageId> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\MessageId> getIterator()
  *
  * @method static MessageIdCollection make()
- * @method static MessageIdCollection fromPayload(array $payload)
+ * @method static MessageIdCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\MessageId
+ * @see \Tarik02\Telegram\Entities\MessageId
  */
 final class MessageIdCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\MessageId
+     * @return \Tarik02\Telegram\Entities\MessageId
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\MessageId
+    public static function makeItem(): \Tarik02\Telegram\Entities\MessageId
     {
-        return \Tarik02\Telegram\Types\MessageId::make();
+        return \Tarik02\Telegram\Entities\MessageId::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\MessageId
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\MessageId
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\MessageId
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\MessageId
     {
-        return \Tarik02\Telegram\Types\MessageId::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\MessageId::fromPayload($payload);
     }
 }

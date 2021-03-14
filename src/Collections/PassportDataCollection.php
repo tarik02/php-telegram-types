@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class PassportDataCollection
  *
- * @method PassportDataCollection push(\Tarik02\Telegram\Types\PassportData $item)
- * @method \Tarik02\Telegram\Types\PassportData get(int $index)
+ * @method PassportDataCollection push(\Tarik02\Telegram\Entities\PassportData $item)
+ * @method \Tarik02\Telegram\Entities\PassportData get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\PassportData> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\PassportData> getIterator()
  *
  * @method static PassportDataCollection make()
- * @method static PassportDataCollection fromPayload(array $payload)
+ * @method static PassportDataCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\PassportData
+ * @see \Tarik02\Telegram\Entities\PassportData
  */
 final class PassportDataCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\PassportData
+     * @return \Tarik02\Telegram\Entities\PassportData
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\PassportData
+    public static function makeItem(): \Tarik02\Telegram\Entities\PassportData
     {
-        return \Tarik02\Telegram\Types\PassportData::make();
+        return \Tarik02\Telegram\Entities\PassportData::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\PassportData
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\PassportData
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\PassportData
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\PassportData
     {
-        return \Tarik02\Telegram\Types\PassportData::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\PassportData::fromPayload($payload);
     }
 }

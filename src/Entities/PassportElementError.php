@@ -26,7 +26,7 @@ abstract class PassportElementError implements \Tarik02\Telegram\Contracts\Paylo
      * @param array $payload
      * @return self
      */
-    public static function fromPayload(array $payload): self
+    public static function fromPayload($payload): self
     {
         $key = $payload['source'] ?? null;
 

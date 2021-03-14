@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class DiceCollection
  *
- * @method DiceCollection push(\Tarik02\Telegram\Types\Dice $item)
- * @method \Tarik02\Telegram\Types\Dice get(int $index)
+ * @method DiceCollection push(\Tarik02\Telegram\Entities\Dice $item)
+ * @method \Tarik02\Telegram\Entities\Dice get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\Dice> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\Dice> getIterator()
  *
  * @method static DiceCollection make()
- * @method static DiceCollection fromPayload(array $payload)
+ * @method static DiceCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\Dice
+ * @see \Tarik02\Telegram\Entities\Dice
  */
 final class DiceCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\Dice
+     * @return \Tarik02\Telegram\Entities\Dice
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\Dice
+    public static function makeItem(): \Tarik02\Telegram\Entities\Dice
     {
-        return \Tarik02\Telegram\Types\Dice::make();
+        return \Tarik02\Telegram\Entities\Dice::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\Dice
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\Dice
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\Dice
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\Dice
     {
-        return \Tarik02\Telegram\Types\Dice::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\Dice::fromPayload($payload);
     }
 }

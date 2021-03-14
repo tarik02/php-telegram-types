@@ -13,7 +13,7 @@ namespace Tarik02\Telegram\Collections;
  * @method \Iterator<\Tarik02\Telegram\Collections\PhotoSizeCollection> getIterator()
  *
  * @method static PhotoSizeCollectionCollection make()
- * @method static PhotoSizeCollectionCollection fromPayload(array $payload)
+ * @method static PhotoSizeCollectionCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Collections\PhotoSizeCollection
@@ -29,11 +29,15 @@ final class PhotoSizeCollectionCollection extends Collection implements \Tarik02
     }
 
     /**
-     * @param array $payload
+     * @param mixed $payload
      * @return \Tarik02\Telegram\Collections\PhotoSizeCollection
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Collections\PhotoSizeCollection
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Collections\PhotoSizeCollection
     {
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
         return \Tarik02\Telegram\Collections\PhotoSizeCollection::fromPayload($payload);
     }
 }

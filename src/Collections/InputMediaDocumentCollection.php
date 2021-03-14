@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InputMediaDocumentCollection
  *
- * @method InputMediaDocumentCollection push(\Tarik02\Telegram\Types\InputMediaDocument $item)
- * @method \Tarik02\Telegram\Types\InputMediaDocument get(int $index)
+ * @method InputMediaDocumentCollection push(\Tarik02\Telegram\Entities\InputMediaDocument $item)
+ * @method \Tarik02\Telegram\Entities\InputMediaDocument get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\InputMediaDocument> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\InputMediaDocument> getIterator()
  *
  * @method static InputMediaDocumentCollection make()
- * @method static InputMediaDocumentCollection fromPayload(array $payload)
+ * @method static InputMediaDocumentCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\InputMediaDocument
+ * @see \Tarik02\Telegram\Entities\InputMediaDocument
  */
 final class InputMediaDocumentCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\InputMediaDocument
+     * @return \Tarik02\Telegram\Entities\InputMediaDocument
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\InputMediaDocument
+    public static function makeItem(): \Tarik02\Telegram\Entities\InputMediaDocument
     {
-        return \Tarik02\Telegram\Types\InputMediaDocument::make();
+        return \Tarik02\Telegram\Entities\InputMediaDocument::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\InputMediaDocument
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\InputMediaDocument
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\InputMediaDocument
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InputMediaDocument
     {
-        return \Tarik02\Telegram\Types\InputMediaDocument::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\InputMediaDocument::fromPayload($payload);
     }
 }

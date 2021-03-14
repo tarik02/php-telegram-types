@@ -13,7 +13,7 @@ namespace Tarik02\Telegram\Collections;
  * @method \Iterator<\Tarik02\Telegram\Entities\InlineKeyboardButton> getIterator()
  *
  * @method static InlineKeyboardButtonCollection make()
- * @method static InlineKeyboardButtonCollection fromPayload(array $payload)
+ * @method static InlineKeyboardButtonCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\InlineKeyboardButton
@@ -29,11 +29,15 @@ final class InlineKeyboardButtonCollection extends Collection implements \Tarik0
     }
 
     /**
-     * @param array $payload
+     * @param mixed $payload
      * @return \Tarik02\Telegram\Entities\InlineKeyboardButton
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Entities\InlineKeyboardButton
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InlineKeyboardButton
     {
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
         return \Tarik02\Telegram\Entities\InlineKeyboardButton::fromPayload($payload);
     }
 

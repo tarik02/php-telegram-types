@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InlineQueryResultAudioCollection
  *
- * @method InlineQueryResultAudioCollection push(\Tarik02\Telegram\Types\InlineQueryResultAudio $item)
- * @method \Tarik02\Telegram\Types\InlineQueryResultAudio get(int $index)
+ * @method InlineQueryResultAudioCollection push(\Tarik02\Telegram\Entities\InlineQueryResultAudio $item)
+ * @method \Tarik02\Telegram\Entities\InlineQueryResultAudio get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\InlineQueryResultAudio> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\InlineQueryResultAudio> getIterator()
  *
  * @method static InlineQueryResultAudioCollection make()
- * @method static InlineQueryResultAudioCollection fromPayload(array $payload)
+ * @method static InlineQueryResultAudioCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\InlineQueryResultAudio
+ * @see \Tarik02\Telegram\Entities\InlineQueryResultAudio
  */
 final class InlineQueryResultAudioCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\InlineQueryResultAudio
+     * @return \Tarik02\Telegram\Entities\InlineQueryResultAudio
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\InlineQueryResultAudio
+    public static function makeItem(): \Tarik02\Telegram\Entities\InlineQueryResultAudio
     {
-        return \Tarik02\Telegram\Types\InlineQueryResultAudio::make();
+        return \Tarik02\Telegram\Entities\InlineQueryResultAudio::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\InlineQueryResultAudio
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\InlineQueryResultAudio
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\InlineQueryResultAudio
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InlineQueryResultAudio
     {
-        return \Tarik02\Telegram\Types\InlineQueryResultAudio::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\InlineQueryResultAudio::fromPayload($payload);
     }
 }

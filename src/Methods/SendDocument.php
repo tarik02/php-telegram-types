@@ -55,6 +55,7 @@ class SendDocument extends Method implements \Tarik02\Telegram\Methods\HasRequir
     public function document()
     {
         $source = $this->payload['document'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['document'];
     }
@@ -69,6 +70,8 @@ class SendDocument extends Method implements \Tarik02\Telegram\Methods\HasRequir
     {
         $payload = $this->payload;
         if ($document instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['document'] = $document->toPayload();
+        } elseif ($document instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['document'] = $document->toPayload();
         } elseif ($document !== null) {
             $payload['document'] = $document;
@@ -89,6 +92,7 @@ class SendDocument extends Method implements \Tarik02\Telegram\Methods\HasRequir
             return null;
         }
         $source = $this->payload['thumb'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['thumb'];
     }
@@ -103,6 +107,8 @@ class SendDocument extends Method implements \Tarik02\Telegram\Methods\HasRequir
     {
         $payload = $this->payload;
         if ($thumb instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['thumb'] = $thumb->toPayload();
+        } elseif ($thumb instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['thumb'] = $thumb->toPayload();
         } elseif ($thumb !== null) {
             $payload['thumb'] = $thumb;

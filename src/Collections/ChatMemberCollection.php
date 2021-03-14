@@ -13,7 +13,7 @@ namespace Tarik02\Telegram\Collections;
  * @method \Iterator<\Tarik02\Telegram\Entities\ChatMember> getIterator()
  *
  * @method static ChatMemberCollection make()
- * @method static ChatMemberCollection fromPayload(array $payload)
+ * @method static ChatMemberCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\ChatMember
@@ -29,11 +29,15 @@ final class ChatMemberCollection extends Collection implements \Tarik02\Telegram
     }
 
     /**
-     * @param array $payload
+     * @param mixed $payload
      * @return \Tarik02\Telegram\Entities\ChatMember
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Entities\ChatMember
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\ChatMember
     {
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
         return \Tarik02\Telegram\Entities\ChatMember::fromPayload($payload);
     }
 }

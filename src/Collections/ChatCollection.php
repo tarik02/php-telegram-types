@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class ChatCollection
  *
- * @method ChatCollection push(\Tarik02\Telegram\Types\Chat $item)
- * @method \Tarik02\Telegram\Types\Chat get(int $index)
+ * @method ChatCollection push(\Tarik02\Telegram\Entities\Chat $item)
+ * @method \Tarik02\Telegram\Entities\Chat get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\Chat> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\Chat> getIterator()
  *
  * @method static ChatCollection make()
- * @method static ChatCollection fromPayload(array $payload)
+ * @method static ChatCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\Chat
+ * @see \Tarik02\Telegram\Entities\Chat
  */
 final class ChatCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\Chat
+     * @return \Tarik02\Telegram\Entities\Chat
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\Chat
+    public static function makeItem(): \Tarik02\Telegram\Entities\Chat
     {
-        return \Tarik02\Telegram\Types\Chat::make();
+        return \Tarik02\Telegram\Entities\Chat::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\Chat
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\Chat
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\Chat
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\Chat
     {
-        return \Tarik02\Telegram\Types\Chat::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\Chat::fromPayload($payload);
     }
 }

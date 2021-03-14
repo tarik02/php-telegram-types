@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InlineQueryResultContactCollection
  *
- * @method InlineQueryResultContactCollection push(\Tarik02\Telegram\Types\InlineQueryResultContact $item)
- * @method \Tarik02\Telegram\Types\InlineQueryResultContact get(int $index)
+ * @method InlineQueryResultContactCollection push(\Tarik02\Telegram\Entities\InlineQueryResultContact $item)
+ * @method \Tarik02\Telegram\Entities\InlineQueryResultContact get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\InlineQueryResultContact> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\InlineQueryResultContact> getIterator()
  *
  * @method static InlineQueryResultContactCollection make()
- * @method static InlineQueryResultContactCollection fromPayload(array $payload)
+ * @method static InlineQueryResultContactCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\InlineQueryResultContact
+ * @see \Tarik02\Telegram\Entities\InlineQueryResultContact
  */
 final class InlineQueryResultContactCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\InlineQueryResultContact
+     * @return \Tarik02\Telegram\Entities\InlineQueryResultContact
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\InlineQueryResultContact
+    public static function makeItem(): \Tarik02\Telegram\Entities\InlineQueryResultContact
     {
-        return \Tarik02\Telegram\Types\InlineQueryResultContact::make();
+        return \Tarik02\Telegram\Entities\InlineQueryResultContact::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\InlineQueryResultContact
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\InlineQueryResultContact
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\InlineQueryResultContact
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InlineQueryResultContact
     {
-        return \Tarik02\Telegram\Types\InlineQueryResultContact::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\InlineQueryResultContact::fromPayload($payload);
     }
 }

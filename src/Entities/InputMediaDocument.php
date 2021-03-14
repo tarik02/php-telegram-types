@@ -71,6 +71,7 @@ class InputMediaDocument implements \Tarik02\Telegram\Entities\InputMedia
             return null;
         }
         $source = $this->payload['thumb'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['thumb'];
     }
@@ -85,6 +86,8 @@ class InputMediaDocument implements \Tarik02\Telegram\Entities\InputMedia
     {
         $payload = $this->payload;
         if ($thumb instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['thumb'] = $thumb->toPayload();
+        } elseif ($thumb instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['thumb'] = $thumb->toPayload();
         } elseif ($thumb !== null) {
             $payload['thumb'] = $thumb;

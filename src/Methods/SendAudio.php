@@ -57,6 +57,7 @@ class SendAudio extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     public function audio()
     {
         $source = $this->payload['audio'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['audio'];
     }
@@ -71,6 +72,8 @@ class SendAudio extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     {
         $payload = $this->payload;
         if ($audio instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['audio'] = $audio->toPayload();
+        } elseif ($audio instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['audio'] = $audio->toPayload();
         } elseif ($audio !== null) {
             $payload['audio'] = $audio;
@@ -236,6 +239,7 @@ class SendAudio extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
             return null;
         }
         $source = $this->payload['thumb'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['thumb'];
     }
@@ -250,6 +254,8 @@ class SendAudio extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     {
         $payload = $this->payload;
         if ($thumb instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['thumb'] = $thumb->toPayload();
+        } elseif ($thumb instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['thumb'] = $thumb->toPayload();
         } elseif ($thumb !== null) {
             $payload['thumb'] = $thumb;

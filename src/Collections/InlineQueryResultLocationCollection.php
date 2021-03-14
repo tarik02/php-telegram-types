@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InlineQueryResultLocationCollection
  *
- * @method InlineQueryResultLocationCollection push(\Tarik02\Telegram\Types\InlineQueryResultLocation $item)
- * @method \Tarik02\Telegram\Types\InlineQueryResultLocation get(int $index)
+ * @method InlineQueryResultLocationCollection push(\Tarik02\Telegram\Entities\InlineQueryResultLocation $item)
+ * @method \Tarik02\Telegram\Entities\InlineQueryResultLocation get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\InlineQueryResultLocation> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\InlineQueryResultLocation> getIterator()
  *
  * @method static InlineQueryResultLocationCollection make()
- * @method static InlineQueryResultLocationCollection fromPayload(array $payload)
+ * @method static InlineQueryResultLocationCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\InlineQueryResultLocation
+ * @see \Tarik02\Telegram\Entities\InlineQueryResultLocation
  */
 final class InlineQueryResultLocationCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\InlineQueryResultLocation
+     * @return \Tarik02\Telegram\Entities\InlineQueryResultLocation
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\InlineQueryResultLocation
+    public static function makeItem(): \Tarik02\Telegram\Entities\InlineQueryResultLocation
     {
-        return \Tarik02\Telegram\Types\InlineQueryResultLocation::make();
+        return \Tarik02\Telegram\Entities\InlineQueryResultLocation::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\InlineQueryResultLocation
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\InlineQueryResultLocation
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\InlineQueryResultLocation
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InlineQueryResultLocation
     {
-        return \Tarik02\Telegram\Types\InlineQueryResultLocation::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\InlineQueryResultLocation::fromPayload($payload);
     }
 }

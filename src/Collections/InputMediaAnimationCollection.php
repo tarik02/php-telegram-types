@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InputMediaAnimationCollection
  *
- * @method InputMediaAnimationCollection push(\Tarik02\Telegram\Types\InputMediaAnimation $item)
- * @method \Tarik02\Telegram\Types\InputMediaAnimation get(int $index)
+ * @method InputMediaAnimationCollection push(\Tarik02\Telegram\Entities\InputMediaAnimation $item)
+ * @method \Tarik02\Telegram\Entities\InputMediaAnimation get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\InputMediaAnimation> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\InputMediaAnimation> getIterator()
  *
  * @method static InputMediaAnimationCollection make()
- * @method static InputMediaAnimationCollection fromPayload(array $payload)
+ * @method static InputMediaAnimationCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\InputMediaAnimation
+ * @see \Tarik02\Telegram\Entities\InputMediaAnimation
  */
 final class InputMediaAnimationCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\InputMediaAnimation
+     * @return \Tarik02\Telegram\Entities\InputMediaAnimation
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\InputMediaAnimation
+    public static function makeItem(): \Tarik02\Telegram\Entities\InputMediaAnimation
     {
-        return \Tarik02\Telegram\Types\InputMediaAnimation::make();
+        return \Tarik02\Telegram\Entities\InputMediaAnimation::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\InputMediaAnimation
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\InputMediaAnimation
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\InputMediaAnimation
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InputMediaAnimation
     {
-        return \Tarik02\Telegram\Types\InputMediaAnimation::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\InputMediaAnimation::fromPayload($payload);
     }
 }

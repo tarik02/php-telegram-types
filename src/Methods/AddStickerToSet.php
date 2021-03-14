@@ -79,6 +79,7 @@ class AddStickerToSet extends Method
             return null;
         }
         $source = $this->payload['png_sticker'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['png_sticker'];
     }
@@ -93,6 +94,8 @@ class AddStickerToSet extends Method
     {
         $payload = $this->payload;
         if ($pngSticker instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['png_sticker'] = $pngSticker->toPayload();
+        } elseif ($pngSticker instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['png_sticker'] = $pngSticker->toPayload();
         } elseif ($pngSticker !== null) {
             $payload['png_sticker'] = $pngSticker;

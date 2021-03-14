@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InlineQueryResultCachedGifCollection
  *
- * @method InlineQueryResultCachedGifCollection push(\Tarik02\Telegram\Types\InlineQueryResultCachedGif $item)
- * @method \Tarik02\Telegram\Types\InlineQueryResultCachedGif get(int $index)
+ * @method InlineQueryResultCachedGifCollection push(\Tarik02\Telegram\Entities\InlineQueryResultCachedGif $item)
+ * @method \Tarik02\Telegram\Entities\InlineQueryResultCachedGif get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\InlineQueryResultCachedGif> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\InlineQueryResultCachedGif> getIterator()
  *
  * @method static InlineQueryResultCachedGifCollection make()
- * @method static InlineQueryResultCachedGifCollection fromPayload(array $payload)
+ * @method static InlineQueryResultCachedGifCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\InlineQueryResultCachedGif
+ * @see \Tarik02\Telegram\Entities\InlineQueryResultCachedGif
  */
 final class InlineQueryResultCachedGifCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\InlineQueryResultCachedGif
+     * @return \Tarik02\Telegram\Entities\InlineQueryResultCachedGif
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\InlineQueryResultCachedGif
+    public static function makeItem(): \Tarik02\Telegram\Entities\InlineQueryResultCachedGif
     {
-        return \Tarik02\Telegram\Types\InlineQueryResultCachedGif::make();
+        return \Tarik02\Telegram\Entities\InlineQueryResultCachedGif::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\InlineQueryResultCachedGif
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\InlineQueryResultCachedGif
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\InlineQueryResultCachedGif
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InlineQueryResultCachedGif
     {
-        return \Tarik02\Telegram\Types\InlineQueryResultCachedGif::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\InlineQueryResultCachedGif::fromPayload($payload);
     }
 }

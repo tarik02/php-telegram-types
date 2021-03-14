@@ -55,6 +55,7 @@ class SendVoice extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     public function voice()
     {
         $source = $this->payload['voice'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['voice'];
     }
@@ -69,6 +70,8 @@ class SendVoice extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     {
         $payload = $this->payload;
         if ($voice instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['voice'] = $voice->toPayload();
+        } elseif ($voice instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['voice'] = $voice->toPayload();
         } elseif ($voice !== null) {
             $payload['voice'] = $voice;

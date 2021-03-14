@@ -55,6 +55,7 @@ class SendVideo extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     public function video()
     {
         $source = $this->payload['video'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['video'];
     }
@@ -69,6 +70,8 @@ class SendVideo extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     {
         $payload = $this->payload;
         if ($video instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['video'] = $video->toPayload();
+        } elseif ($video instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['video'] = $video->toPayload();
         } elseif ($video !== null) {
             $payload['video'] = $video;
@@ -158,6 +161,7 @@ class SendVideo extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
             return null;
         }
         $source = $this->payload['thumb'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['thumb'];
     }
@@ -172,6 +176,8 @@ class SendVideo extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     {
         $payload = $this->payload;
         if ($thumb instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['thumb'] = $thumb->toPayload();
+        } elseif ($thumb instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['thumb'] = $thumb->toPayload();
         } elseif ($thumb !== null) {
             $payload['thumb'] = $thumb;

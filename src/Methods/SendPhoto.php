@@ -55,6 +55,7 @@ class SendPhoto extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     public function photo()
     {
         $source = $this->payload['photo'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['photo'];
     }
@@ -69,6 +70,8 @@ class SendPhoto extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     {
         $payload = $this->payload;
         if ($photo instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['photo'] = $photo->toPayload();
+        } elseif ($photo instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['photo'] = $photo->toPayload();
         } elseif ($photo !== null) {
             $payload['photo'] = $photo;

@@ -13,7 +13,7 @@ namespace Tarik02\Telegram\Collections;
  * @method \Iterator<\Tarik02\Telegram\Entities\GameHighScore> getIterator()
  *
  * @method static GameHighScoreCollection make()
- * @method static GameHighScoreCollection fromPayload(array $payload)
+ * @method static GameHighScoreCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\GameHighScore
@@ -29,11 +29,15 @@ final class GameHighScoreCollection extends Collection implements \Tarik02\Teleg
     }
 
     /**
-     * @param array $payload
+     * @param mixed $payload
      * @return \Tarik02\Telegram\Entities\GameHighScore
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Entities\GameHighScore
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\GameHighScore
     {
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
         return \Tarik02\Telegram\Entities\GameHighScore::fromPayload($payload);
     }
 }

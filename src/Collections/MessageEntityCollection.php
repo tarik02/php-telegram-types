@@ -13,7 +13,7 @@ namespace Tarik02\Telegram\Collections;
  * @method \Iterator<\Tarik02\Telegram\Entities\MessageEntity> getIterator()
  *
  * @method static MessageEntityCollection make()
- * @method static MessageEntityCollection fromPayload(array $payload)
+ * @method static MessageEntityCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\MessageEntity
@@ -29,11 +29,15 @@ final class MessageEntityCollection extends Collection implements \Tarik02\Teleg
     }
 
     /**
-     * @param array $payload
+     * @param mixed $payload
      * @return \Tarik02\Telegram\Entities\MessageEntity
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Entities\MessageEntity
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\MessageEntity
     {
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
         return \Tarik02\Telegram\Entities\MessageEntity::fromPayload($payload);
     }
 }

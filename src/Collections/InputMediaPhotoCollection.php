@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InputMediaPhotoCollection
  *
- * @method InputMediaPhotoCollection push(\Tarik02\Telegram\Types\InputMediaPhoto $item)
- * @method \Tarik02\Telegram\Types\InputMediaPhoto get(int $index)
+ * @method InputMediaPhotoCollection push(\Tarik02\Telegram\Entities\InputMediaPhoto $item)
+ * @method \Tarik02\Telegram\Entities\InputMediaPhoto get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\InputMediaPhoto> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\InputMediaPhoto> getIterator()
  *
  * @method static InputMediaPhotoCollection make()
- * @method static InputMediaPhotoCollection fromPayload(array $payload)
+ * @method static InputMediaPhotoCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\InputMediaPhoto
+ * @see \Tarik02\Telegram\Entities\InputMediaPhoto
  */
 final class InputMediaPhotoCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\InputMediaPhoto
+     * @return \Tarik02\Telegram\Entities\InputMediaPhoto
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\InputMediaPhoto
+    public static function makeItem(): \Tarik02\Telegram\Entities\InputMediaPhoto
     {
-        return \Tarik02\Telegram\Types\InputMediaPhoto::make();
+        return \Tarik02\Telegram\Entities\InputMediaPhoto::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\InputMediaPhoto
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\InputMediaPhoto
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\InputMediaPhoto
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InputMediaPhoto
     {
-        return \Tarik02\Telegram\Types\InputMediaPhoto::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\InputMediaPhoto::fromPayload($payload);
     }
 }

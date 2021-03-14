@@ -13,7 +13,7 @@ namespace Tarik02\Telegram\Collections;
  * @method \Iterator<\Tarik02\Telegram\Entities\Update> getIterator()
  *
  * @method static UpdateCollection make()
- * @method static UpdateCollection fromPayload(array $payload)
+ * @method static UpdateCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\Update
@@ -29,11 +29,15 @@ final class UpdateCollection extends Collection implements \Tarik02\Telegram\Con
     }
 
     /**
-     * @param array $payload
+     * @param mixed $payload
      * @return \Tarik02\Telegram\Entities\Update
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Entities\Update
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\Update
     {
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
         return \Tarik02\Telegram\Entities\Update::fromPayload($payload);
     }
 }

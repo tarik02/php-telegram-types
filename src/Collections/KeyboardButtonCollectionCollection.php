@@ -13,7 +13,7 @@ namespace Tarik02\Telegram\Collections;
  * @method \Iterator<\Tarik02\Telegram\Collections\KeyboardButtonCollection> getIterator()
  *
  * @method static KeyboardButtonCollectionCollection make()
- * @method static KeyboardButtonCollectionCollection fromPayload(array $payload)
+ * @method static KeyboardButtonCollectionCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Collections\KeyboardButtonCollection
@@ -29,11 +29,15 @@ final class KeyboardButtonCollectionCollection extends Collection implements \Ta
     }
 
     /**
-     * @param array $payload
+     * @param mixed $payload
      * @return \Tarik02\Telegram\Collections\KeyboardButtonCollection
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Collections\KeyboardButtonCollection
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Collections\KeyboardButtonCollection
     {
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
         return \Tarik02\Telegram\Collections\KeyboardButtonCollection::fromPayload($payload);
     }
 }

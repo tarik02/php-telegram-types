@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class ChosenInlineResultCollection
  *
- * @method ChosenInlineResultCollection push(\Tarik02\Telegram\Types\ChosenInlineResult $item)
- * @method \Tarik02\Telegram\Types\ChosenInlineResult get(int $index)
+ * @method ChosenInlineResultCollection push(\Tarik02\Telegram\Entities\ChosenInlineResult $item)
+ * @method \Tarik02\Telegram\Entities\ChosenInlineResult get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\ChosenInlineResult> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\ChosenInlineResult> getIterator()
  *
  * @method static ChosenInlineResultCollection make()
- * @method static ChosenInlineResultCollection fromPayload(array $payload)
+ * @method static ChosenInlineResultCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\ChosenInlineResult
+ * @see \Tarik02\Telegram\Entities\ChosenInlineResult
  */
 final class ChosenInlineResultCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\ChosenInlineResult
+     * @return \Tarik02\Telegram\Entities\ChosenInlineResult
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\ChosenInlineResult
+    public static function makeItem(): \Tarik02\Telegram\Entities\ChosenInlineResult
     {
-        return \Tarik02\Telegram\Types\ChosenInlineResult::make();
+        return \Tarik02\Telegram\Entities\ChosenInlineResult::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\ChosenInlineResult
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\ChosenInlineResult
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\ChosenInlineResult
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\ChosenInlineResult
     {
-        return \Tarik02\Telegram\Types\ChosenInlineResult::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\ChosenInlineResult::fromPayload($payload);
     }
 }

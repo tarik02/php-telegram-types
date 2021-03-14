@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class PassportElementErrorTranslationFilesCollection
  *
- * @method PassportElementErrorTranslationFilesCollection push(\Tarik02\Telegram\Types\PassportElementErrorTranslationFiles $item)
- * @method \Tarik02\Telegram\Types\PassportElementErrorTranslationFiles get(int $index)
+ * @method PassportElementErrorTranslationFilesCollection push(\Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles $item)
+ * @method \Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\PassportElementErrorTranslationFiles> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles> getIterator()
  *
  * @method static PassportElementErrorTranslationFilesCollection make()
- * @method static PassportElementErrorTranslationFilesCollection fromPayload(array $payload)
+ * @method static PassportElementErrorTranslationFilesCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\PassportElementErrorTranslationFiles
+ * @see \Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles
  */
 final class PassportElementErrorTranslationFilesCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\PassportElementErrorTranslationFiles
+     * @return \Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\PassportElementErrorTranslationFiles
+    public static function makeItem(): \Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles
     {
-        return \Tarik02\Telegram\Types\PassportElementErrorTranslationFiles::make();
+        return \Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\PassportElementErrorTranslationFiles
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\PassportElementErrorTranslationFiles
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles
     {
-        return \Tarik02\Telegram\Types\PassportElementErrorTranslationFiles::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\PassportElementErrorTranslationFiles::fromPayload($payload);
     }
 }

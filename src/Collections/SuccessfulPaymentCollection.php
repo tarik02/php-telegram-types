@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class SuccessfulPaymentCollection
  *
- * @method SuccessfulPaymentCollection push(\Tarik02\Telegram\Types\SuccessfulPayment $item)
- * @method \Tarik02\Telegram\Types\SuccessfulPayment get(int $index)
+ * @method SuccessfulPaymentCollection push(\Tarik02\Telegram\Entities\SuccessfulPayment $item)
+ * @method \Tarik02\Telegram\Entities\SuccessfulPayment get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\SuccessfulPayment> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\SuccessfulPayment> getIterator()
  *
  * @method static SuccessfulPaymentCollection make()
- * @method static SuccessfulPaymentCollection fromPayload(array $payload)
+ * @method static SuccessfulPaymentCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\SuccessfulPayment
+ * @see \Tarik02\Telegram\Entities\SuccessfulPayment
  */
 final class SuccessfulPaymentCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\SuccessfulPayment
+     * @return \Tarik02\Telegram\Entities\SuccessfulPayment
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\SuccessfulPayment
+    public static function makeItem(): \Tarik02\Telegram\Entities\SuccessfulPayment
     {
-        return \Tarik02\Telegram\Types\SuccessfulPayment::make();
+        return \Tarik02\Telegram\Entities\SuccessfulPayment::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\SuccessfulPayment
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\SuccessfulPayment
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\SuccessfulPayment
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\SuccessfulPayment
     {
-        return \Tarik02\Telegram\Types\SuccessfulPayment::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\SuccessfulPayment::fromPayload($payload);
     }
 }

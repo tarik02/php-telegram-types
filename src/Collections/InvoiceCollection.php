@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InvoiceCollection
  *
- * @method InvoiceCollection push(\Tarik02\Telegram\Types\Invoice $item)
- * @method \Tarik02\Telegram\Types\Invoice get(int $index)
+ * @method InvoiceCollection push(\Tarik02\Telegram\Entities\Invoice $item)
+ * @method \Tarik02\Telegram\Entities\Invoice get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\Invoice> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\Invoice> getIterator()
  *
  * @method static InvoiceCollection make()
- * @method static InvoiceCollection fromPayload(array $payload)
+ * @method static InvoiceCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\Invoice
+ * @see \Tarik02\Telegram\Entities\Invoice
  */
 final class InvoiceCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\Invoice
+     * @return \Tarik02\Telegram\Entities\Invoice
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\Invoice
+    public static function makeItem(): \Tarik02\Telegram\Entities\Invoice
     {
-        return \Tarik02\Telegram\Types\Invoice::make();
+        return \Tarik02\Telegram\Entities\Invoice::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\Invoice
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\Invoice
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\Invoice
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\Invoice
     {
-        return \Tarik02\Telegram\Types\Invoice::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\Invoice::fromPayload($payload);
     }
 }

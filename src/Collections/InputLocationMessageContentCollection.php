@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InputLocationMessageContentCollection
  *
- * @method InputLocationMessageContentCollection push(\Tarik02\Telegram\Types\InputLocationMessageContent $item)
- * @method \Tarik02\Telegram\Types\InputLocationMessageContent get(int $index)
+ * @method InputLocationMessageContentCollection push(\Tarik02\Telegram\Entities\InputLocationMessageContent $item)
+ * @method \Tarik02\Telegram\Entities\InputLocationMessageContent get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\InputLocationMessageContent> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\InputLocationMessageContent> getIterator()
  *
  * @method static InputLocationMessageContentCollection make()
- * @method static InputLocationMessageContentCollection fromPayload(array $payload)
+ * @method static InputLocationMessageContentCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\InputLocationMessageContent
+ * @see \Tarik02\Telegram\Entities\InputLocationMessageContent
  */
 final class InputLocationMessageContentCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\InputLocationMessageContent
+     * @return \Tarik02\Telegram\Entities\InputLocationMessageContent
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\InputLocationMessageContent
+    public static function makeItem(): \Tarik02\Telegram\Entities\InputLocationMessageContent
     {
-        return \Tarik02\Telegram\Types\InputLocationMessageContent::make();
+        return \Tarik02\Telegram\Entities\InputLocationMessageContent::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\InputLocationMessageContent
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\InputLocationMessageContent
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\InputLocationMessageContent
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InputLocationMessageContent
     {
-        return \Tarik02\Telegram\Types\InputLocationMessageContent::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\InputLocationMessageContent::fromPayload($payload);
     }
 }

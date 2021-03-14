@@ -55,6 +55,7 @@ class SendSticker extends Method implements \Tarik02\Telegram\Methods\HasRequire
     public function sticker()
     {
         $source = $this->payload['sticker'];
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
 
         return $this->payload['sticker'];
     }
@@ -69,6 +70,8 @@ class SendSticker extends Method implements \Tarik02\Telegram\Methods\HasRequire
     {
         $payload = $this->payload;
         if ($sticker instanceof \Tarik02\Telegram\Contracts\Payloadable) {
+            $payload['sticker'] = $sticker->toPayload();
+        } elseif ($sticker instanceof \Tarik02\Telegram\Entities\InputFile) {
             $payload['sticker'] = $sticker->toPayload();
         } elseif ($sticker !== null) {
             $payload['sticker'] = $sticker;

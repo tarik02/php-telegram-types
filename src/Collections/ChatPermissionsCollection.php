@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class ChatPermissionsCollection
  *
- * @method ChatPermissionsCollection push(\Tarik02\Telegram\Types\ChatPermissions $item)
- * @method \Tarik02\Telegram\Types\ChatPermissions get(int $index)
+ * @method ChatPermissionsCollection push(\Tarik02\Telegram\Entities\ChatPermissions $item)
+ * @method \Tarik02\Telegram\Entities\ChatPermissions get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\ChatPermissions> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\ChatPermissions> getIterator()
  *
  * @method static ChatPermissionsCollection make()
- * @method static ChatPermissionsCollection fromPayload(array $payload)
+ * @method static ChatPermissionsCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\ChatPermissions
+ * @see \Tarik02\Telegram\Entities\ChatPermissions
  */
 final class ChatPermissionsCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\ChatPermissions
+     * @return \Tarik02\Telegram\Entities\ChatPermissions
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\ChatPermissions
+    public static function makeItem(): \Tarik02\Telegram\Entities\ChatPermissions
     {
-        return \Tarik02\Telegram\Types\ChatPermissions::make();
+        return \Tarik02\Telegram\Entities\ChatPermissions::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\ChatPermissions
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\ChatPermissions
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\ChatPermissions
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\ChatPermissions
     {
-        return \Tarik02\Telegram\Types\ChatPermissions::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\ChatPermissions::fromPayload($payload);
     }
 }

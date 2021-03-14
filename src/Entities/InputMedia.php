@@ -26,7 +26,7 @@ abstract class InputMedia implements \Tarik02\Telegram\Contracts\Payloadable
      * @param array $payload
      * @return self
      */
-    public static function fromPayload(array $payload): self
+    public static function fromPayload($payload): self
     {
         $key = $payload['type'] ?? null;
 

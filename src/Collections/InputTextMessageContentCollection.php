@@ -7,33 +7,37 @@ namespace Tarik02\Telegram\Collections;
 /**
  * Class InputTextMessageContentCollection
  *
- * @method InputTextMessageContentCollection push(\Tarik02\Telegram\Types\InputTextMessageContent $item)
- * @method \Tarik02\Telegram\Types\InputTextMessageContent get(int $index)
+ * @method InputTextMessageContentCollection push(\Tarik02\Telegram\Entities\InputTextMessageContent $item)
+ * @method \Tarik02\Telegram\Entities\InputTextMessageContent get(int $index)
  *
- * @method \Iterator<\Tarik02\Telegram\Types\InputTextMessageContent> getIterator()
+ * @method \Iterator<\Tarik02\Telegram\Entities\InputTextMessageContent> getIterator()
  *
  * @method static InputTextMessageContentCollection make()
- * @method static InputTextMessageContentCollection fromPayload(array $payload)
+ * @method static InputTextMessageContentCollection fromPayload($payload)
  *
  * @package Tarik02\Telegram\Collections
- * @see \Tarik02\Telegram\Types\InputTextMessageContent
+ * @see \Tarik02\Telegram\Entities\InputTextMessageContent
  */
 final class InputTextMessageContentCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * @return \Tarik02\Telegram\Types\InputTextMessageContent
+     * @return \Tarik02\Telegram\Entities\InputTextMessageContent
      */
-    public static function makeItem(): \Tarik02\Telegram\Types\InputTextMessageContent
+    public static function makeItem(): \Tarik02\Telegram\Entities\InputTextMessageContent
     {
-        return \Tarik02\Telegram\Types\InputTextMessageContent::make();
+        return \Tarik02\Telegram\Entities\InputTextMessageContent::make();
     }
 
     /**
-     * @param array $payload
-     * @return \Tarik02\Telegram\Types\InputTextMessageContent
+     * @param mixed $payload
+     * @return \Tarik02\Telegram\Entities\InputTextMessageContent
      */
-    public static function itemFromPayload(array $payload): \Tarik02\Telegram\Types\InputTextMessageContent
+    public static function itemFromPayload($payload): \Tarik02\Telegram\Entities\InputTextMessageContent
     {
-        return \Tarik02\Telegram\Types\InputTextMessageContent::fromPayload($payload);
+        if (! \is_array($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        }
+
+        return \Tarik02\Telegram\Entities\InputTextMessageContent::fromPayload($payload);
     }
 }
