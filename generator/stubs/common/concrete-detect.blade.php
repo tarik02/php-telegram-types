@@ -12,6 +12,10 @@
         $source = {{ $origin }};
 @foreach($concreteDetectProperty['any_of'] as $item)
 @continue($item['type'] !== 'reference')
+@if($item['reference'] === 'InputFile')
+        return \Tarik02\Telegram\Entities\InputFile::fromPayload($source);
+@break
+@endif
 @php($targetEntity = $generator->getEntity($item['reference']))
 @if($targetEntity && isset($targetEntity['properties']))
         if (isset($source['{{ $targetEntity['properties'][0]['name'] }}'])) {

@@ -35,8 +35,8 @@ final class {{ $name }} extends Collection implements \Tarik02\Telegram\Contract
      */
     public static function itemFromPayload($payload): {{ $item }}
     {
-        if (! \is_array($payload)) {
-            throw new \InvalidArgumentException('Item payload is expected to be an array.');
+        if (! \is_string($payload)) {
+            throw new \InvalidArgumentException('Item payload is expected to be a string.');
         }
 
         return {{ $item }}::fromPayload($payload);

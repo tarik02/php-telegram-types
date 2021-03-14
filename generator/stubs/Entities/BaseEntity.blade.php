@@ -30,7 +30,7 @@ abstract class {{ $entity['name'] }} implements {{ $parent ?? '\Tarik02\Telegram
      * {{ '@' }}param array $payload
      * {{ '@' }}return self
      */
-    public static function fromPayload(array $payload): self
+    public static function fromPayload($payload): self
     {
         @include('common/concrete-detect', [
             'concreteDetect' => $concreteDetect,

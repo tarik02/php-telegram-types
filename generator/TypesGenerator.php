@@ -83,6 +83,12 @@ final class TypesGenerator
         $this->copy('files/Methods/HasRequiredChatIdTrait.php', 'Methods/HasRequiredChatIdTrait.php');
         $this->copy('files/Methods/Method.php', 'Methods/Method.php');
 
+        $this->generateCollection(
+            'InputFileCollection',
+            '\Tarik02\Telegram\Entities\InputFile',
+            'Collections/InputFileCollection'
+        );
+
         $this->render(
             'TelegramTypes',
             'TelegramTypes',
@@ -163,6 +169,14 @@ final class TypesGenerator
                     $entity['name'] . 'Collection',
                     '\Tarik02\Telegram\Entities\\' . $entity['name']
                 );
+            } elseif ($entity['name'] === 'InputFile') {
+                $this->render(
+                    'Entities/' . $entity['name'],
+                    'Entities/InputFile',
+                    [
+                        'entity' => $entity,
+                    ]
+                );
             }
         }
 
@@ -200,10 +214,10 @@ final class TypesGenerator
         foreach ($this->generatedCollections as $name => $item) {
             $this->render(
                 'Collections/' . $name,
-                'Collections/Collection',
+                $item['template'],
                 [
                     'name' => $name,
-                    'item' => $item,
+                    'item' => $item['item'],
                     'hasHigherOrderCollection' => isset($this->generatedCollections[$name . 'Collection']),
                 ]
             );
@@ -325,12 +339,16 @@ final class TypesGenerator
     /**
      * @param string $name
      * @param string $item
+     * @param string $template
      * @return string
      */
-    public function generateCollection(string $name, string $item): string
+    public function generateCollection(string $name, string $item, string $template = 'Collections/Collection'): string
     {
         if (! isset($this->generatedCollections[$name])) {
-            $this->generatedCollections[$name] = $item;
+            $this->generatedCollections[$name] = [
+                'item' => $item,
+                'template' => $template,
+            ];
         }
 
         return sprintf('\Tarik02\Telegram\Collections\%s', $name);

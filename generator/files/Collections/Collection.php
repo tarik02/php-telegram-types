@@ -14,10 +14,10 @@ use Tarik02\Telegram\Contracts\Payloadable;
 abstract class Collection implements Payloadable, Countable, IteratorAggregate
 {
     /**
-     * @param Payloadable $item
+     * @param $item
      * @return self
      */
-    public function push(Payloadable $item): self
+    public function push($item): self
     {
         $payload = $this->payload;
         $payload[] = $item->toPayload();
@@ -26,9 +26,9 @@ abstract class Collection implements Payloadable, Countable, IteratorAggregate
 
     /**
      * @param int $index
-     * @return Payloadable
+     * @return mixed
      */
-    public function get(int $index): Payloadable
+    public function get(int $index)
     {
         return $this->itemFromPayload($this->payload[$index]);
     }
@@ -80,10 +80,10 @@ abstract class Collection implements Payloadable, Countable, IteratorAggregate
     abstract public static function makeItem(): Payloadable;
 
     /**
-     * @param array $payload
+     * @param mixed $payload
      * @return Payloadable
      */
-    abstract public static function itemFromPayload(array $payload): Payloadable;
+    abstract public static function itemFromPayload($payload): Payloadable;
 
     /**
      * @var array
