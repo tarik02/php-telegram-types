@@ -97,9 +97,9 @@ class AnswerInlineQuery extends Method
      *
      * @return bool|null
      */
-    public function isPersonal(): ?bool
+    public function isPersonal(): bool
     {
-        return $this->payload['is_personal'] ?? null;
+        return $this->payload['is_personal'] ?? false;
     }
 
     /**
@@ -108,7 +108,7 @@ class AnswerInlineQuery extends Method
      * @param bool|null $isPersonal
      * @return self
      */
-    public function withIsPersonal(?bool $isPersonal): self
+    public function withIsPersonal(bool $isPersonal): self
     {
         $payload = $this->payload;
         $payload['is_personal'] = $isPersonal;
@@ -219,7 +219,7 @@ class AnswerInlineQuery extends Method
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

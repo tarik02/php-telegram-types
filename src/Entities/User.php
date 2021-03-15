@@ -44,7 +44,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
      */
     public function isBot(): bool
     {
-        return $this->payload['is_bot'];
+        return $this->payload['is_bot'] ?? false;
     }
 
     /**
@@ -157,9 +157,9 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canJoinGroups(): ?bool
+    public function canJoinGroups(): bool
     {
-        return $this->payload['can_join_groups'] ?? null;
+        return $this->payload['can_join_groups'] ?? false;
     }
 
     /**
@@ -168,7 +168,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canJoinGroups
      * @return self
      */
-    public function withCanJoinGroups(?bool $canJoinGroups): self
+    public function withCanJoinGroups(bool $canJoinGroups): self
     {
         $payload = $this->payload;
         $payload['can_join_groups'] = $canJoinGroups;
@@ -180,9 +180,9 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canReadAllGroupMessages(): ?bool
+    public function canReadAllGroupMessages(): bool
     {
-        return $this->payload['can_read_all_group_messages'] ?? null;
+        return $this->payload['can_read_all_group_messages'] ?? false;
     }
 
     /**
@@ -191,7 +191,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canReadAllGroupMessages
      * @return self
      */
-    public function withCanReadAllGroupMessages(?bool $canReadAllGroupMessages): self
+    public function withCanReadAllGroupMessages(bool $canReadAllGroupMessages): self
     {
         $payload = $this->payload;
         $payload['can_read_all_group_messages'] = $canReadAllGroupMessages;
@@ -203,9 +203,9 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function supportsInlineQueries(): ?bool
+    public function supportsInlineQueries(): bool
     {
-        return $this->payload['supports_inline_queries'] ?? null;
+        return $this->payload['supports_inline_queries'] ?? false;
     }
 
     /**
@@ -214,7 +214,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $supportsInlineQueries
      * @return self
      */
-    public function withSupportsInlineQueries(?bool $supportsInlineQueries): self
+    public function withSupportsInlineQueries(bool $supportsInlineQueries): self
     {
         $payload = $this->payload;
         $payload['supports_inline_queries'] = $supportsInlineQueries;

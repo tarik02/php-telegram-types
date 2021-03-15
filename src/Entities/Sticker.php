@@ -113,7 +113,7 @@ class Sticker implements \Tarik02\Telegram\Contracts\Payloadable
      */
     public function isAnimated(): bool
     {
-        return $this->payload['is_animated'];
+        return $this->payload['is_animated'] ?? false;
     }
 
     /**

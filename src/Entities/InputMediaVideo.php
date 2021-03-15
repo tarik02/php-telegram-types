@@ -247,9 +247,9 @@ class InputMediaVideo implements \Tarik02\Telegram\Entities\InputMedia
      *
      * @return bool|null
      */
-    public function supportsStreaming(): ?bool
+    public function supportsStreaming(): bool
     {
-        return $this->payload['supports_streaming'] ?? null;
+        return $this->payload['supports_streaming'] ?? false;
     }
 
     /**
@@ -258,7 +258,7 @@ class InputMediaVideo implements \Tarik02\Telegram\Entities\InputMedia
      * @param bool|null $supportsStreaming
      * @return self
      */
-    public function withSupportsStreaming(?bool $supportsStreaming): self
+    public function withSupportsStreaming(bool $supportsStreaming): self
     {
         $payload = $this->payload;
         $payload['supports_streaming'] = $supportsStreaming;

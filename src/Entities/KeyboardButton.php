@@ -42,9 +42,9 @@ class KeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function requestContact(): ?bool
+    public function requestContact(): bool
     {
-        return $this->payload['request_contact'] ?? null;
+        return $this->payload['request_contact'] ?? false;
     }
 
     /**
@@ -53,7 +53,7 @@ class KeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $requestContact
      * @return self
      */
-    public function withRequestContact(?bool $requestContact): self
+    public function withRequestContact(bool $requestContact): self
     {
         $payload = $this->payload;
         $payload['request_contact'] = $requestContact;
@@ -65,9 +65,9 @@ class KeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function requestLocation(): ?bool
+    public function requestLocation(): bool
     {
-        return $this->payload['request_location'] ?? null;
+        return $this->payload['request_location'] ?? false;
     }
 
     /**
@@ -76,7 +76,7 @@ class KeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $requestLocation
      * @return self
      */
-    public function withRequestLocation(?bool $requestLocation): self
+    public function withRequestLocation(bool $requestLocation): self
     {
         $payload = $this->payload;
         $payload['request_location'] = $requestLocation;

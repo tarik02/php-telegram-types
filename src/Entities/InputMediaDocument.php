@@ -178,9 +178,9 @@ class InputMediaDocument implements \Tarik02\Telegram\Entities\InputMedia
      *
      * @return bool|null
      */
-    public function disableContentTypeDetection(): ?bool
+    public function disableContentTypeDetection(): bool
     {
-        return $this->payload['disable_content_type_detection'] ?? null;
+        return $this->payload['disable_content_type_detection'] ?? false;
     }
 
     /**
@@ -189,7 +189,7 @@ class InputMediaDocument implements \Tarik02\Telegram\Entities\InputMedia
      * @param bool|null $disableContentTypeDetection
      * @return self
      */
-    public function withDisableContentTypeDetection(?bool $disableContentTypeDetection): self
+    public function withDisableContentTypeDetection(bool $disableContentTypeDetection): self
     {
         $payload = $this->payload;
         $payload['disable_content_type_detection'] = $disableContentTypeDetection;

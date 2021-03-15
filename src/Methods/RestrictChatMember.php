@@ -147,7 +147,7 @@ class RestrictChatMember extends Method implements \Tarik02\Telegram\Methods\Has
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

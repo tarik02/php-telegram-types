@@ -88,9 +88,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function isAnonymous(): ?bool
+    public function isAnonymous(): bool
     {
-        return $this->payload['is_anonymous'] ?? null;
+        return $this->payload['is_anonymous'] ?? false;
     }
 
     /**
@@ -99,7 +99,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $isAnonymous
      * @return self
      */
-    public function withIsAnonymous(?bool $isAnonymous): self
+    public function withIsAnonymous(bool $isAnonymous): self
     {
         $payload = $this->payload;
         $payload['is_anonymous'] = $isAnonymous;
@@ -111,9 +111,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canBeEdited(): ?bool
+    public function canBeEdited(): bool
     {
-        return $this->payload['can_be_edited'] ?? null;
+        return $this->payload['can_be_edited'] ?? false;
     }
 
     /**
@@ -122,7 +122,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canBeEdited
      * @return self
      */
-    public function withCanBeEdited(?bool $canBeEdited): self
+    public function withCanBeEdited(bool $canBeEdited): self
     {
         $payload = $this->payload;
         $payload['can_be_edited'] = $canBeEdited;
@@ -134,9 +134,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canManageChat(): ?bool
+    public function canManageChat(): bool
     {
-        return $this->payload['can_manage_chat'] ?? null;
+        return $this->payload['can_manage_chat'] ?? false;
     }
 
     /**
@@ -145,7 +145,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canManageChat
      * @return self
      */
-    public function withCanManageChat(?bool $canManageChat): self
+    public function withCanManageChat(bool $canManageChat): self
     {
         $payload = $this->payload;
         $payload['can_manage_chat'] = $canManageChat;
@@ -157,9 +157,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canPostMessages(): ?bool
+    public function canPostMessages(): bool
     {
-        return $this->payload['can_post_messages'] ?? null;
+        return $this->payload['can_post_messages'] ?? false;
     }
 
     /**
@@ -168,7 +168,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canPostMessages
      * @return self
      */
-    public function withCanPostMessages(?bool $canPostMessages): self
+    public function withCanPostMessages(bool $canPostMessages): self
     {
         $payload = $this->payload;
         $payload['can_post_messages'] = $canPostMessages;
@@ -180,9 +180,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canEditMessages(): ?bool
+    public function canEditMessages(): bool
     {
-        return $this->payload['can_edit_messages'] ?? null;
+        return $this->payload['can_edit_messages'] ?? false;
     }
 
     /**
@@ -191,7 +191,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canEditMessages
      * @return self
      */
-    public function withCanEditMessages(?bool $canEditMessages): self
+    public function withCanEditMessages(bool $canEditMessages): self
     {
         $payload = $this->payload;
         $payload['can_edit_messages'] = $canEditMessages;
@@ -203,9 +203,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canDeleteMessages(): ?bool
+    public function canDeleteMessages(): bool
     {
-        return $this->payload['can_delete_messages'] ?? null;
+        return $this->payload['can_delete_messages'] ?? false;
     }
 
     /**
@@ -214,7 +214,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canDeleteMessages
      * @return self
      */
-    public function withCanDeleteMessages(?bool $canDeleteMessages): self
+    public function withCanDeleteMessages(bool $canDeleteMessages): self
     {
         $payload = $this->payload;
         $payload['can_delete_messages'] = $canDeleteMessages;
@@ -226,9 +226,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canManageVoiceChats(): ?bool
+    public function canManageVoiceChats(): bool
     {
-        return $this->payload['can_manage_voice_chats'] ?? null;
+        return $this->payload['can_manage_voice_chats'] ?? false;
     }
 
     /**
@@ -237,7 +237,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canManageVoiceChats
      * @return self
      */
-    public function withCanManageVoiceChats(?bool $canManageVoiceChats): self
+    public function withCanManageVoiceChats(bool $canManageVoiceChats): self
     {
         $payload = $this->payload;
         $payload['can_manage_voice_chats'] = $canManageVoiceChats;
@@ -249,9 +249,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canRestrictMembers(): ?bool
+    public function canRestrictMembers(): bool
     {
-        return $this->payload['can_restrict_members'] ?? null;
+        return $this->payload['can_restrict_members'] ?? false;
     }
 
     /**
@@ -260,7 +260,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canRestrictMembers
      * @return self
      */
-    public function withCanRestrictMembers(?bool $canRestrictMembers): self
+    public function withCanRestrictMembers(bool $canRestrictMembers): self
     {
         $payload = $this->payload;
         $payload['can_restrict_members'] = $canRestrictMembers;
@@ -272,9 +272,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canPromoteMembers(): ?bool
+    public function canPromoteMembers(): bool
     {
-        return $this->payload['can_promote_members'] ?? null;
+        return $this->payload['can_promote_members'] ?? false;
     }
 
     /**
@@ -283,7 +283,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canPromoteMembers
      * @return self
      */
-    public function withCanPromoteMembers(?bool $canPromoteMembers): self
+    public function withCanPromoteMembers(bool $canPromoteMembers): self
     {
         $payload = $this->payload;
         $payload['can_promote_members'] = $canPromoteMembers;
@@ -295,9 +295,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canChangeInfo(): ?bool
+    public function canChangeInfo(): bool
     {
-        return $this->payload['can_change_info'] ?? null;
+        return $this->payload['can_change_info'] ?? false;
     }
 
     /**
@@ -306,7 +306,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canChangeInfo
      * @return self
      */
-    public function withCanChangeInfo(?bool $canChangeInfo): self
+    public function withCanChangeInfo(bool $canChangeInfo): self
     {
         $payload = $this->payload;
         $payload['can_change_info'] = $canChangeInfo;
@@ -318,9 +318,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canInviteUsers(): ?bool
+    public function canInviteUsers(): bool
     {
-        return $this->payload['can_invite_users'] ?? null;
+        return $this->payload['can_invite_users'] ?? false;
     }
 
     /**
@@ -329,7 +329,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canInviteUsers
      * @return self
      */
-    public function withCanInviteUsers(?bool $canInviteUsers): self
+    public function withCanInviteUsers(bool $canInviteUsers): self
     {
         $payload = $this->payload;
         $payload['can_invite_users'] = $canInviteUsers;
@@ -341,9 +341,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canPinMessages(): ?bool
+    public function canPinMessages(): bool
     {
-        return $this->payload['can_pin_messages'] ?? null;
+        return $this->payload['can_pin_messages'] ?? false;
     }
 
     /**
@@ -352,7 +352,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canPinMessages
      * @return self
      */
-    public function withCanPinMessages(?bool $canPinMessages): self
+    public function withCanPinMessages(bool $canPinMessages): self
     {
         $payload = $this->payload;
         $payload['can_pin_messages'] = $canPinMessages;
@@ -364,9 +364,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function isMember(): ?bool
+    public function isMember(): bool
     {
-        return $this->payload['is_member'] ?? null;
+        return $this->payload['is_member'] ?? false;
     }
 
     /**
@@ -375,7 +375,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $isMember
      * @return self
      */
-    public function withIsMember(?bool $isMember): self
+    public function withIsMember(bool $isMember): self
     {
         $payload = $this->payload;
         $payload['is_member'] = $isMember;
@@ -387,9 +387,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canSendMessages(): ?bool
+    public function canSendMessages(): bool
     {
-        return $this->payload['can_send_messages'] ?? null;
+        return $this->payload['can_send_messages'] ?? false;
     }
 
     /**
@@ -398,7 +398,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canSendMessages
      * @return self
      */
-    public function withCanSendMessages(?bool $canSendMessages): self
+    public function withCanSendMessages(bool $canSendMessages): self
     {
         $payload = $this->payload;
         $payload['can_send_messages'] = $canSendMessages;
@@ -410,9 +410,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canSendMediaMessages(): ?bool
+    public function canSendMediaMessages(): bool
     {
-        return $this->payload['can_send_media_messages'] ?? null;
+        return $this->payload['can_send_media_messages'] ?? false;
     }
 
     /**
@@ -421,7 +421,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canSendMediaMessages
      * @return self
      */
-    public function withCanSendMediaMessages(?bool $canSendMediaMessages): self
+    public function withCanSendMediaMessages(bool $canSendMediaMessages): self
     {
         $payload = $this->payload;
         $payload['can_send_media_messages'] = $canSendMediaMessages;
@@ -433,9 +433,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canSendPolls(): ?bool
+    public function canSendPolls(): bool
     {
-        return $this->payload['can_send_polls'] ?? null;
+        return $this->payload['can_send_polls'] ?? false;
     }
 
     /**
@@ -444,7 +444,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canSendPolls
      * @return self
      */
-    public function withCanSendPolls(?bool $canSendPolls): self
+    public function withCanSendPolls(bool $canSendPolls): self
     {
         $payload = $this->payload;
         $payload['can_send_polls'] = $canSendPolls;
@@ -456,9 +456,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canSendOtherMessages(): ?bool
+    public function canSendOtherMessages(): bool
     {
-        return $this->payload['can_send_other_messages'] ?? null;
+        return $this->payload['can_send_other_messages'] ?? false;
     }
 
     /**
@@ -467,7 +467,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canSendOtherMessages
      * @return self
      */
-    public function withCanSendOtherMessages(?bool $canSendOtherMessages): self
+    public function withCanSendOtherMessages(bool $canSendOtherMessages): self
     {
         $payload = $this->payload;
         $payload['can_send_other_messages'] = $canSendOtherMessages;
@@ -479,9 +479,9 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canAddWebPagePreviews(): ?bool
+    public function canAddWebPagePreviews(): bool
     {
-        return $this->payload['can_add_web_page_previews'] ?? null;
+        return $this->payload['can_add_web_page_previews'] ?? false;
     }
 
     /**
@@ -490,7 +490,7 @@ class ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canAddWebPagePreviews
      * @return self
      */
-    public function withCanAddWebPagePreviews(?bool $canAddWebPagePreviews): self
+    public function withCanAddWebPagePreviews(bool $canAddWebPagePreviews): self
     {
         $payload = $this->payload;
         $payload['can_add_web_page_previews'] = $canAddWebPagePreviews;

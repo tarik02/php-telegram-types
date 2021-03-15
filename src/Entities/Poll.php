@@ -113,7 +113,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
      */
     public function isClosed(): bool
     {
-        return $this->payload['is_closed'];
+        return $this->payload['is_closed'] ?? false;
     }
 
     /**
@@ -136,7 +136,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
      */
     public function isAnonymous(): bool
     {
-        return $this->payload['is_anonymous'];
+        return $this->payload['is_anonymous'] ?? false;
     }
 
     /**
@@ -182,7 +182,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
      */
     public function allowsMultipleAnswers(): bool
     {
-        return $this->payload['allows_multiple_answers'];
+        return $this->payload['allows_multiple_answers'] ?? false;
     }
 
     /**

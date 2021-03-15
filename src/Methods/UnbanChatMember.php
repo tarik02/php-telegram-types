@@ -75,9 +75,9 @@ class UnbanChatMember extends Method implements \Tarik02\Telegram\Methods\HasReq
      *
      * @return bool|null
      */
-    public function onlyIfBanned(): ?bool
+    public function onlyIfBanned(): bool
     {
-        return $this->payload['only_if_banned'] ?? null;
+        return $this->payload['only_if_banned'] ?? false;
     }
 
     /**
@@ -86,7 +86,7 @@ class UnbanChatMember extends Method implements \Tarik02\Telegram\Methods\HasReq
      * @param bool|null $onlyIfBanned
      * @return self
      */
-    public function withOnlyIfBanned(?bool $onlyIfBanned): self
+    public function withOnlyIfBanned(bool $onlyIfBanned): self
     {
         $payload = $this->payload;
         $payload['only_if_banned'] = $onlyIfBanned;
@@ -124,7 +124,7 @@ class UnbanChatMember extends Method implements \Tarik02\Telegram\Methods\HasReq
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

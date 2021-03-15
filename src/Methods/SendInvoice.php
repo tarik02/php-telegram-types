@@ -326,9 +326,9 @@ class SendInvoice extends Method
      *
      * @return bool|null
      */
-    public function needName(): ?bool
+    public function needName(): bool
     {
-        return $this->payload['need_name'] ?? null;
+        return $this->payload['need_name'] ?? false;
     }
 
     /**
@@ -337,7 +337,7 @@ class SendInvoice extends Method
      * @param bool|null $needName
      * @return self
      */
-    public function withNeedName(?bool $needName): self
+    public function withNeedName(bool $needName): self
     {
         $payload = $this->payload;
         $payload['need_name'] = $needName;
@@ -349,9 +349,9 @@ class SendInvoice extends Method
      *
      * @return bool|null
      */
-    public function needPhoneNumber(): ?bool
+    public function needPhoneNumber(): bool
     {
-        return $this->payload['need_phone_number'] ?? null;
+        return $this->payload['need_phone_number'] ?? false;
     }
 
     /**
@@ -360,7 +360,7 @@ class SendInvoice extends Method
      * @param bool|null $needPhoneNumber
      * @return self
      */
-    public function withNeedPhoneNumber(?bool $needPhoneNumber): self
+    public function withNeedPhoneNumber(bool $needPhoneNumber): self
     {
         $payload = $this->payload;
         $payload['need_phone_number'] = $needPhoneNumber;
@@ -372,9 +372,9 @@ class SendInvoice extends Method
      *
      * @return bool|null
      */
-    public function needEmail(): ?bool
+    public function needEmail(): bool
     {
-        return $this->payload['need_email'] ?? null;
+        return $this->payload['need_email'] ?? false;
     }
 
     /**
@@ -383,7 +383,7 @@ class SendInvoice extends Method
      * @param bool|null $needEmail
      * @return self
      */
-    public function withNeedEmail(?bool $needEmail): self
+    public function withNeedEmail(bool $needEmail): self
     {
         $payload = $this->payload;
         $payload['need_email'] = $needEmail;
@@ -395,9 +395,9 @@ class SendInvoice extends Method
      *
      * @return bool|null
      */
-    public function needShippingAddress(): ?bool
+    public function needShippingAddress(): bool
     {
-        return $this->payload['need_shipping_address'] ?? null;
+        return $this->payload['need_shipping_address'] ?? false;
     }
 
     /**
@@ -406,7 +406,7 @@ class SendInvoice extends Method
      * @param bool|null $needShippingAddress
      * @return self
      */
-    public function withNeedShippingAddress(?bool $needShippingAddress): self
+    public function withNeedShippingAddress(bool $needShippingAddress): self
     {
         $payload = $this->payload;
         $payload['need_shipping_address'] = $needShippingAddress;
@@ -418,9 +418,9 @@ class SendInvoice extends Method
      *
      * @return bool|null
      */
-    public function sendPhoneNumberToProvider(): ?bool
+    public function sendPhoneNumberToProvider(): bool
     {
-        return $this->payload['send_phone_number_to_provider'] ?? null;
+        return $this->payload['send_phone_number_to_provider'] ?? false;
     }
 
     /**
@@ -429,7 +429,7 @@ class SendInvoice extends Method
      * @param bool|null $sendPhoneNumberToProvider
      * @return self
      */
-    public function withSendPhoneNumberToProvider(?bool $sendPhoneNumberToProvider): self
+    public function withSendPhoneNumberToProvider(bool $sendPhoneNumberToProvider): self
     {
         $payload = $this->payload;
         $payload['send_phone_number_to_provider'] = $sendPhoneNumberToProvider;
@@ -441,9 +441,9 @@ class SendInvoice extends Method
      *
      * @return bool|null
      */
-    public function sendEmailToProvider(): ?bool
+    public function sendEmailToProvider(): bool
     {
-        return $this->payload['send_email_to_provider'] ?? null;
+        return $this->payload['send_email_to_provider'] ?? false;
     }
 
     /**
@@ -452,7 +452,7 @@ class SendInvoice extends Method
      * @param bool|null $sendEmailToProvider
      * @return self
      */
-    public function withSendEmailToProvider(?bool $sendEmailToProvider): self
+    public function withSendEmailToProvider(bool $sendEmailToProvider): self
     {
         $payload = $this->payload;
         $payload['send_email_to_provider'] = $sendEmailToProvider;
@@ -464,9 +464,9 @@ class SendInvoice extends Method
      *
      * @return bool|null
      */
-    public function isFlexible(): ?bool
+    public function isFlexible(): bool
     {
-        return $this->payload['is_flexible'] ?? null;
+        return $this->payload['is_flexible'] ?? false;
     }
 
     /**
@@ -475,7 +475,7 @@ class SendInvoice extends Method
      * @param bool|null $isFlexible
      * @return self
      */
-    public function withIsFlexible(?bool $isFlexible): self
+    public function withIsFlexible(bool $isFlexible): self
     {
         $payload = $this->payload;
         $payload['is_flexible'] = $isFlexible;
@@ -487,9 +487,9 @@ class SendInvoice extends Method
      *
      * @return bool|null
      */
-    public function disableNotification(): ?bool
+    public function disableNotification(): bool
     {
-        return $this->payload['disable_notification'] ?? null;
+        return $this->payload['disable_notification'] ?? false;
     }
 
     /**
@@ -498,7 +498,7 @@ class SendInvoice extends Method
      * @param bool|null $disableNotification
      * @return self
      */
-    public function withDisableNotification(?bool $disableNotification): self
+    public function withDisableNotification(bool $disableNotification): self
     {
         $payload = $this->payload;
         $payload['disable_notification'] = $disableNotification;
@@ -533,9 +533,9 @@ class SendInvoice extends Method
      *
      * @return bool|null
      */
-    public function allowSendingWithoutReply(): ?bool
+    public function allowSendingWithoutReply(): bool
     {
-        return $this->payload['allow_sending_without_reply'] ?? null;
+        return $this->payload['allow_sending_without_reply'] ?? false;
     }
 
     /**
@@ -544,7 +544,7 @@ class SendInvoice extends Method
      * @param bool|null $allowSendingWithoutReply
      * @return self
      */
-    public function withAllowSendingWithoutReply(?bool $allowSendingWithoutReply): self
+    public function withAllowSendingWithoutReply(bool $allowSendingWithoutReply): self
     {
         $payload = $this->payload;
         $payload['allow_sending_without_reply'] = $allowSendingWithoutReply;

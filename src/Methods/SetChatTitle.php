@@ -101,7 +101,7 @@ class SetChatTitle extends Method implements \Tarik02\Telegram\Methods\HasRequir
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

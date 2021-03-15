@@ -124,7 +124,7 @@ class SetChatAdministratorCustomTitle extends Method implements \Tarik02\Telegra
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

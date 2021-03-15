@@ -164,9 +164,9 @@ class InlineQueryResultArticle implements \Tarik02\Telegram\Entities\InlineQuery
      *
      * @return bool|null
      */
-    public function hideUrl(): ?bool
+    public function hideUrl(): bool
     {
-        return $this->payload['hide_url'] ?? null;
+        return $this->payload['hide_url'] ?? false;
     }
 
     /**
@@ -175,7 +175,7 @@ class InlineQueryResultArticle implements \Tarik02\Telegram\Entities\InlineQuery
      * @param bool|null $hideUrl
      * @return self
      */
-    public function withHideUrl(?bool $hideUrl): self
+    public function withHideUrl(bool $hideUrl): self
     {
         $payload = $this->payload;
         $payload['hide_url'] = $hideUrl;

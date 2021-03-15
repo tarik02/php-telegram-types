@@ -75,9 +75,9 @@ class ForwardMessage extends Method implements \Tarik02\Telegram\Methods\HasRequ
      *
      * @return bool|null
      */
-    public function disableNotification(): ?bool
+    public function disableNotification(): bool
     {
-        return $this->payload['disable_notification'] ?? null;
+        return $this->payload['disable_notification'] ?? false;
     }
 
     /**
@@ -86,7 +86,7 @@ class ForwardMessage extends Method implements \Tarik02\Telegram\Methods\HasRequ
      * @param bool|null $disableNotification
      * @return self
      */
-    public function withDisableNotification(?bool $disableNotification): self
+    public function withDisableNotification(bool $disableNotification): self
     {
         $payload = $this->payload;
         $payload['disable_notification'] = $disableNotification;

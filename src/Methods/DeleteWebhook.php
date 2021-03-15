@@ -27,9 +27,9 @@ class DeleteWebhook extends Method
      *
      * @return bool|null
      */
-    public function dropPendingUpdates(): ?bool
+    public function dropPendingUpdates(): bool
     {
-        return $this->payload['drop_pending_updates'] ?? null;
+        return $this->payload['drop_pending_updates'] ?? false;
     }
 
     /**
@@ -38,7 +38,7 @@ class DeleteWebhook extends Method
      * @param bool|null $dropPendingUpdates
      * @return self
      */
-    public function withDropPendingUpdates(?bool $dropPendingUpdates): self
+    public function withDropPendingUpdates(bool $dropPendingUpdates): self
     {
         $payload = $this->payload;
         $payload['drop_pending_updates'] = $dropPendingUpdates;
@@ -76,7 +76,7 @@ class DeleteWebhook extends Method
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

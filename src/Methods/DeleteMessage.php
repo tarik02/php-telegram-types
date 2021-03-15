@@ -109,7 +109,7 @@ class DeleteMessage extends Method implements \Tarik02\Telegram\Methods\HasRequi
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

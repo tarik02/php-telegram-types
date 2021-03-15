@@ -172,9 +172,9 @@ class EditMessageText extends Method
      *
      * @return bool|null
      */
-    public function disableWebPagePreview(): ?bool
+    public function disableWebPagePreview(): bool
     {
-        return $this->payload['disable_web_page_preview'] ?? null;
+        return $this->payload['disable_web_page_preview'] ?? false;
     }
 
     /**
@@ -183,7 +183,7 @@ class EditMessageText extends Method
      * @param bool|null $disableWebPagePreview
      * @return self
      */
-    public function withDisableWebPagePreview(?bool $disableWebPagePreview): self
+    public function withDisableWebPagePreview(bool $disableWebPagePreview): self
     {
         $payload = $this->payload;
         $payload['disable_web_page_preview'] = $disableWebPagePreview;

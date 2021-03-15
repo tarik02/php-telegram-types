@@ -75,9 +75,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function isAnonymous(): ?bool
+    public function isAnonymous(): bool
     {
-        return $this->payload['is_anonymous'] ?? null;
+        return $this->payload['is_anonymous'] ?? false;
     }
 
     /**
@@ -86,7 +86,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $isAnonymous
      * @return self
      */
-    public function withIsAnonymous(?bool $isAnonymous): self
+    public function withIsAnonymous(bool $isAnonymous): self
     {
         $payload = $this->payload;
         $payload['is_anonymous'] = $isAnonymous;
@@ -98,9 +98,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canManageChat(): ?bool
+    public function canManageChat(): bool
     {
-        return $this->payload['can_manage_chat'] ?? null;
+        return $this->payload['can_manage_chat'] ?? false;
     }
 
     /**
@@ -109,7 +109,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canManageChat
      * @return self
      */
-    public function withCanManageChat(?bool $canManageChat): self
+    public function withCanManageChat(bool $canManageChat): self
     {
         $payload = $this->payload;
         $payload['can_manage_chat'] = $canManageChat;
@@ -121,9 +121,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canPostMessages(): ?bool
+    public function canPostMessages(): bool
     {
-        return $this->payload['can_post_messages'] ?? null;
+        return $this->payload['can_post_messages'] ?? false;
     }
 
     /**
@@ -132,7 +132,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canPostMessages
      * @return self
      */
-    public function withCanPostMessages(?bool $canPostMessages): self
+    public function withCanPostMessages(bool $canPostMessages): self
     {
         $payload = $this->payload;
         $payload['can_post_messages'] = $canPostMessages;
@@ -144,9 +144,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canEditMessages(): ?bool
+    public function canEditMessages(): bool
     {
-        return $this->payload['can_edit_messages'] ?? null;
+        return $this->payload['can_edit_messages'] ?? false;
     }
 
     /**
@@ -155,7 +155,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canEditMessages
      * @return self
      */
-    public function withCanEditMessages(?bool $canEditMessages): self
+    public function withCanEditMessages(bool $canEditMessages): self
     {
         $payload = $this->payload;
         $payload['can_edit_messages'] = $canEditMessages;
@@ -167,9 +167,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canDeleteMessages(): ?bool
+    public function canDeleteMessages(): bool
     {
-        return $this->payload['can_delete_messages'] ?? null;
+        return $this->payload['can_delete_messages'] ?? false;
     }
 
     /**
@@ -178,7 +178,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canDeleteMessages
      * @return self
      */
-    public function withCanDeleteMessages(?bool $canDeleteMessages): self
+    public function withCanDeleteMessages(bool $canDeleteMessages): self
     {
         $payload = $this->payload;
         $payload['can_delete_messages'] = $canDeleteMessages;
@@ -190,9 +190,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canManageVoiceChats(): ?bool
+    public function canManageVoiceChats(): bool
     {
-        return $this->payload['can_manage_voice_chats'] ?? null;
+        return $this->payload['can_manage_voice_chats'] ?? false;
     }
 
     /**
@@ -201,7 +201,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canManageVoiceChats
      * @return self
      */
-    public function withCanManageVoiceChats(?bool $canManageVoiceChats): self
+    public function withCanManageVoiceChats(bool $canManageVoiceChats): self
     {
         $payload = $this->payload;
         $payload['can_manage_voice_chats'] = $canManageVoiceChats;
@@ -213,9 +213,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canRestrictMembers(): ?bool
+    public function canRestrictMembers(): bool
     {
-        return $this->payload['can_restrict_members'] ?? null;
+        return $this->payload['can_restrict_members'] ?? false;
     }
 
     /**
@@ -224,7 +224,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canRestrictMembers
      * @return self
      */
-    public function withCanRestrictMembers(?bool $canRestrictMembers): self
+    public function withCanRestrictMembers(bool $canRestrictMembers): self
     {
         $payload = $this->payload;
         $payload['can_restrict_members'] = $canRestrictMembers;
@@ -236,9 +236,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canPromoteMembers(): ?bool
+    public function canPromoteMembers(): bool
     {
-        return $this->payload['can_promote_members'] ?? null;
+        return $this->payload['can_promote_members'] ?? false;
     }
 
     /**
@@ -247,7 +247,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canPromoteMembers
      * @return self
      */
-    public function withCanPromoteMembers(?bool $canPromoteMembers): self
+    public function withCanPromoteMembers(bool $canPromoteMembers): self
     {
         $payload = $this->payload;
         $payload['can_promote_members'] = $canPromoteMembers;
@@ -259,9 +259,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canChangeInfo(): ?bool
+    public function canChangeInfo(): bool
     {
-        return $this->payload['can_change_info'] ?? null;
+        return $this->payload['can_change_info'] ?? false;
     }
 
     /**
@@ -270,7 +270,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canChangeInfo
      * @return self
      */
-    public function withCanChangeInfo(?bool $canChangeInfo): self
+    public function withCanChangeInfo(bool $canChangeInfo): self
     {
         $payload = $this->payload;
         $payload['can_change_info'] = $canChangeInfo;
@@ -282,9 +282,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canInviteUsers(): ?bool
+    public function canInviteUsers(): bool
     {
-        return $this->payload['can_invite_users'] ?? null;
+        return $this->payload['can_invite_users'] ?? false;
     }
 
     /**
@@ -293,7 +293,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canInviteUsers
      * @return self
      */
-    public function withCanInviteUsers(?bool $canInviteUsers): self
+    public function withCanInviteUsers(bool $canInviteUsers): self
     {
         $payload = $this->payload;
         $payload['can_invite_users'] = $canInviteUsers;
@@ -305,9 +305,9 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      *
      * @return bool|null
      */
-    public function canPinMessages(): ?bool
+    public function canPinMessages(): bool
     {
-        return $this->payload['can_pin_messages'] ?? null;
+        return $this->payload['can_pin_messages'] ?? false;
     }
 
     /**
@@ -316,7 +316,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      * @param bool|null $canPinMessages
      * @return self
      */
-    public function withCanPinMessages(?bool $canPinMessages): self
+    public function withCanPinMessages(bool $canPinMessages): self
     {
         $payload = $this->payload;
         $payload['can_pin_messages'] = $canPinMessages;
@@ -354,7 +354,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

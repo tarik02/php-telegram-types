@@ -98,9 +98,9 @@ class KickChatMember extends Method implements \Tarik02\Telegram\Methods\HasRequ
      *
      * @return bool|null
      */
-    public function revokeMessages(): ?bool
+    public function revokeMessages(): bool
     {
-        return $this->payload['revoke_messages'] ?? null;
+        return $this->payload['revoke_messages'] ?? false;
     }
 
     /**
@@ -109,7 +109,7 @@ class KickChatMember extends Method implements \Tarik02\Telegram\Methods\HasRequ
      * @param bool|null $revokeMessages
      * @return self
      */
-    public function withRevokeMessages(?bool $revokeMessages): self
+    public function withRevokeMessages(bool $revokeMessages): self
     {
         $payload = $this->payload;
         $payload['revoke_messages'] = $revokeMessages;
@@ -147,7 +147,7 @@ class KickChatMember extends Method implements \Tarik02\Telegram\Methods\HasRequ
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

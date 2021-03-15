@@ -44,7 +44,7 @@ class WebhookInfo implements \Tarik02\Telegram\Contracts\Payloadable
      */
     public function hasCustomCertificate(): bool
     {
-        return $this->payload['has_custom_certificate'];
+        return $this->payload['has_custom_certificate'] ?? false;
     }
 
     /**

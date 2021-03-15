@@ -52,7 +52,7 @@ class AnswerPreCheckoutQuery extends Method
      */
     public function ok(): bool
     {
-        return $this->payload['ok'];
+        return $this->payload['ok'] ?? false;
     }
 
     /**
@@ -122,7 +122,7 @@ class AnswerPreCheckoutQuery extends Method
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

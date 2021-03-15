@@ -1068,9 +1068,9 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function deleteChatPhoto(): ?bool
+    public function deleteChatPhoto(): bool
     {
-        return $this->payload['delete_chat_photo'] ?? null;
+        return $this->payload['delete_chat_photo'] ?? false;
     }
 
     /**
@@ -1079,7 +1079,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $deleteChatPhoto
      * @return self
      */
-    public function withDeleteChatPhoto(?bool $deleteChatPhoto): self
+    public function withDeleteChatPhoto(bool $deleteChatPhoto): self
     {
         $payload = $this->payload;
         $payload['delete_chat_photo'] = $deleteChatPhoto;
@@ -1091,9 +1091,9 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function groupChatCreated(): ?bool
+    public function groupChatCreated(): bool
     {
-        return $this->payload['group_chat_created'] ?? null;
+        return $this->payload['group_chat_created'] ?? false;
     }
 
     /**
@@ -1102,7 +1102,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $groupChatCreated
      * @return self
      */
-    public function withGroupChatCreated(?bool $groupChatCreated): self
+    public function withGroupChatCreated(bool $groupChatCreated): self
     {
         $payload = $this->payload;
         $payload['group_chat_created'] = $groupChatCreated;
@@ -1114,9 +1114,9 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function supergroupChatCreated(): ?bool
+    public function supergroupChatCreated(): bool
     {
-        return $this->payload['supergroup_chat_created'] ?? null;
+        return $this->payload['supergroup_chat_created'] ?? false;
     }
 
     /**
@@ -1125,7 +1125,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $supergroupChatCreated
      * @return self
      */
-    public function withSupergroupChatCreated(?bool $supergroupChatCreated): self
+    public function withSupergroupChatCreated(bool $supergroupChatCreated): self
     {
         $payload = $this->payload;
         $payload['supergroup_chat_created'] = $supergroupChatCreated;
@@ -1137,9 +1137,9 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function channelChatCreated(): ?bool
+    public function channelChatCreated(): bool
     {
-        return $this->payload['channel_chat_created'] ?? null;
+        return $this->payload['channel_chat_created'] ?? false;
     }
 
     /**
@@ -1148,7 +1148,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $channelChatCreated
      * @return self
      */
-    public function withChannelChatCreated(?bool $channelChatCreated): self
+    public function withChannelChatCreated(bool $channelChatCreated): self
     {
         $payload = $this->payload;
         $payload['channel_chat_created'] = $channelChatCreated;

@@ -128,9 +128,9 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
      *
      * @return bool|null
      */
-    public function disableWebPagePreview(): ?bool
+    public function disableWebPagePreview(): bool
     {
-        return $this->payload['disable_web_page_preview'] ?? null;
+        return $this->payload['disable_web_page_preview'] ?? false;
     }
 
     /**
@@ -139,7 +139,7 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
      * @param bool|null $disableWebPagePreview
      * @return self
      */
-    public function withDisableWebPagePreview(?bool $disableWebPagePreview): self
+    public function withDisableWebPagePreview(bool $disableWebPagePreview): self
     {
         $payload = $this->payload;
         $payload['disable_web_page_preview'] = $disableWebPagePreview;
@@ -151,9 +151,9 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
      *
      * @return bool|null
      */
-    public function disableNotification(): ?bool
+    public function disableNotification(): bool
     {
-        return $this->payload['disable_notification'] ?? null;
+        return $this->payload['disable_notification'] ?? false;
     }
 
     /**
@@ -162,7 +162,7 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
      * @param bool|null $disableNotification
      * @return self
      */
-    public function withDisableNotification(?bool $disableNotification): self
+    public function withDisableNotification(bool $disableNotification): self
     {
         $payload = $this->payload;
         $payload['disable_notification'] = $disableNotification;
@@ -197,9 +197,9 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
      *
      * @return bool|null
      */
-    public function allowSendingWithoutReply(): ?bool
+    public function allowSendingWithoutReply(): bool
     {
-        return $this->payload['allow_sending_without_reply'] ?? null;
+        return $this->payload['allow_sending_without_reply'] ?? false;
     }
 
     /**
@@ -208,7 +208,7 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
      * @param bool|null $allowSendingWithoutReply
      * @return self
      */
-    public function withAllowSendingWithoutReply(?bool $allowSendingWithoutReply): self
+    public function withAllowSendingWithoutReply(bool $allowSendingWithoutReply): self
     {
         $payload = $this->payload;
         $payload['allow_sending_without_reply'] = $allowSendingWithoutReply;

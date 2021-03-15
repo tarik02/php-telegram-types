@@ -21,7 +21,7 @@ class ReplyKeyboardRemove implements \Tarik02\Telegram\Contracts\Payloadable
      */
     public function removeKeyboard(): bool
     {
-        return $this->payload['remove_keyboard'];
+        return $this->payload['remove_keyboard'] ?? false;
     }
 
     /**
@@ -44,9 +44,9 @@ class ReplyKeyboardRemove implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function selective(): ?bool
+    public function selective(): bool
     {
-        return $this->payload['selective'] ?? null;
+        return $this->payload['selective'] ?? false;
     }
 
     /**
@@ -57,7 +57,7 @@ class ReplyKeyboardRemove implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $selective
      * @return self
      */
-    public function withSelective(?bool $selective): self
+    public function withSelective(bool $selective): self
     {
         $payload = $this->payload;
         $payload['selective'] = $selective;

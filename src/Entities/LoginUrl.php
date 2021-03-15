@@ -96,9 +96,9 @@ class LoginUrl implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function requestWriteAccess(): ?bool
+    public function requestWriteAccess(): bool
     {
-        return $this->payload['request_write_access'] ?? null;
+        return $this->payload['request_write_access'] ?? false;
     }
 
     /**
@@ -107,7 +107,7 @@ class LoginUrl implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $requestWriteAccess
      * @return self
      */
-    public function withRequestWriteAccess(?bool $requestWriteAccess): self
+    public function withRequestWriteAccess(bool $requestWriteAccess): self
     {
         $payload = $this->payload;
         $payload['request_write_access'] = $requestWriteAccess;

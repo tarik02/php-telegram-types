@@ -98,9 +98,9 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      *
      * @return bool|null
      */
-    public function isAnonymous(): ?bool
+    public function isAnonymous(): bool
     {
-        return $this->payload['is_anonymous'] ?? null;
+        return $this->payload['is_anonymous'] ?? false;
     }
 
     /**
@@ -109,7 +109,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      * @param bool|null $isAnonymous
      * @return self
      */
-    public function withIsAnonymous(?bool $isAnonymous): self
+    public function withIsAnonymous(bool $isAnonymous): self
     {
         $payload = $this->payload;
         $payload['is_anonymous'] = $isAnonymous;
@@ -144,9 +144,9 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      *
      * @return bool|null
      */
-    public function allowsMultipleAnswers(): ?bool
+    public function allowsMultipleAnswers(): bool
     {
-        return $this->payload['allows_multiple_answers'] ?? null;
+        return $this->payload['allows_multiple_answers'] ?? false;
     }
 
     /**
@@ -155,7 +155,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      * @param bool|null $allowsMultipleAnswers
      * @return self
      */
-    public function withAllowsMultipleAnswers(?bool $allowsMultipleAnswers): self
+    public function withAllowsMultipleAnswers(bool $allowsMultipleAnswers): self
     {
         $payload = $this->payload;
         $payload['allows_multiple_answers'] = $allowsMultipleAnswers;
@@ -312,9 +312,9 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      *
      * @return bool|null
      */
-    public function isClosed(): ?bool
+    public function isClosed(): bool
     {
-        return $this->payload['is_closed'] ?? null;
+        return $this->payload['is_closed'] ?? false;
     }
 
     /**
@@ -323,7 +323,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      * @param bool|null $isClosed
      * @return self
      */
-    public function withIsClosed(?bool $isClosed): self
+    public function withIsClosed(bool $isClosed): self
     {
         $payload = $this->payload;
         $payload['is_closed'] = $isClosed;
@@ -335,9 +335,9 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      *
      * @return bool|null
      */
-    public function disableNotification(): ?bool
+    public function disableNotification(): bool
     {
-        return $this->payload['disable_notification'] ?? null;
+        return $this->payload['disable_notification'] ?? false;
     }
 
     /**
@@ -346,7 +346,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      * @param bool|null $disableNotification
      * @return self
      */
-    public function withDisableNotification(?bool $disableNotification): self
+    public function withDisableNotification(bool $disableNotification): self
     {
         $payload = $this->payload;
         $payload['disable_notification'] = $disableNotification;
@@ -381,9 +381,9 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      *
      * @return bool|null
      */
-    public function allowSendingWithoutReply(): ?bool
+    public function allowSendingWithoutReply(): bool
     {
-        return $this->payload['allow_sending_without_reply'] ?? null;
+        return $this->payload['allow_sending_without_reply'] ?? false;
     }
 
     /**
@@ -392,7 +392,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      * @param bool|null $allowSendingWithoutReply
      * @return self
      */
-    public function withAllowSendingWithoutReply(?bool $allowSendingWithoutReply): self
+    public function withAllowSendingWithoutReply(bool $allowSendingWithoutReply): self
     {
         $payload = $this->payload;
         $payload['allow_sending_without_reply'] = $allowSendingWithoutReply;

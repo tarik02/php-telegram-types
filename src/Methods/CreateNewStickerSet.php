@@ -186,9 +186,9 @@ class CreateNewStickerSet extends Method
      *
      * @return bool|null
      */
-    public function containsMasks(): ?bool
+    public function containsMasks(): bool
     {
-        return $this->payload['contains_masks'] ?? null;
+        return $this->payload['contains_masks'] ?? false;
     }
 
     /**
@@ -197,7 +197,7 @@ class CreateNewStickerSet extends Method
      * @param bool|null $containsMasks
      * @return self
      */
-    public function withContainsMasks(?bool $containsMasks): self
+    public function withContainsMasks(bool $containsMasks): self
     {
         $payload = $this->payload;
         $payload['contains_masks'] = $containsMasks;
@@ -265,7 +265,7 @@ class CreateNewStickerSet extends Method
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

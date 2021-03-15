@@ -19,9 +19,9 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canSendMessages(): ?bool
+    public function canSendMessages(): bool
     {
-        return $this->payload['can_send_messages'] ?? null;
+        return $this->payload['can_send_messages'] ?? false;
     }
 
     /**
@@ -30,7 +30,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canSendMessages
      * @return self
      */
-    public function withCanSendMessages(?bool $canSendMessages): self
+    public function withCanSendMessages(bool $canSendMessages): self
     {
         $payload = $this->payload;
         $payload['can_send_messages'] = $canSendMessages;
@@ -42,9 +42,9 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canSendMediaMessages(): ?bool
+    public function canSendMediaMessages(): bool
     {
-        return $this->payload['can_send_media_messages'] ?? null;
+        return $this->payload['can_send_media_messages'] ?? false;
     }
 
     /**
@@ -53,7 +53,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canSendMediaMessages
      * @return self
      */
-    public function withCanSendMediaMessages(?bool $canSendMediaMessages): self
+    public function withCanSendMediaMessages(bool $canSendMediaMessages): self
     {
         $payload = $this->payload;
         $payload['can_send_media_messages'] = $canSendMediaMessages;
@@ -65,9 +65,9 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canSendPolls(): ?bool
+    public function canSendPolls(): bool
     {
-        return $this->payload['can_send_polls'] ?? null;
+        return $this->payload['can_send_polls'] ?? false;
     }
 
     /**
@@ -76,7 +76,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canSendPolls
      * @return self
      */
-    public function withCanSendPolls(?bool $canSendPolls): self
+    public function withCanSendPolls(bool $canSendPolls): self
     {
         $payload = $this->payload;
         $payload['can_send_polls'] = $canSendPolls;
@@ -88,9 +88,9 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canSendOtherMessages(): ?bool
+    public function canSendOtherMessages(): bool
     {
-        return $this->payload['can_send_other_messages'] ?? null;
+        return $this->payload['can_send_other_messages'] ?? false;
     }
 
     /**
@@ -99,7 +99,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canSendOtherMessages
      * @return self
      */
-    public function withCanSendOtherMessages(?bool $canSendOtherMessages): self
+    public function withCanSendOtherMessages(bool $canSendOtherMessages): self
     {
         $payload = $this->payload;
         $payload['can_send_other_messages'] = $canSendOtherMessages;
@@ -111,9 +111,9 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canAddWebPagePreviews(): ?bool
+    public function canAddWebPagePreviews(): bool
     {
-        return $this->payload['can_add_web_page_previews'] ?? null;
+        return $this->payload['can_add_web_page_previews'] ?? false;
     }
 
     /**
@@ -122,7 +122,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canAddWebPagePreviews
      * @return self
      */
-    public function withCanAddWebPagePreviews(?bool $canAddWebPagePreviews): self
+    public function withCanAddWebPagePreviews(bool $canAddWebPagePreviews): self
     {
         $payload = $this->payload;
         $payload['can_add_web_page_previews'] = $canAddWebPagePreviews;
@@ -134,9 +134,9 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canChangeInfo(): ?bool
+    public function canChangeInfo(): bool
     {
-        return $this->payload['can_change_info'] ?? null;
+        return $this->payload['can_change_info'] ?? false;
     }
 
     /**
@@ -145,7 +145,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canChangeInfo
      * @return self
      */
-    public function withCanChangeInfo(?bool $canChangeInfo): self
+    public function withCanChangeInfo(bool $canChangeInfo): self
     {
         $payload = $this->payload;
         $payload['can_change_info'] = $canChangeInfo;
@@ -157,9 +157,9 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canInviteUsers(): ?bool
+    public function canInviteUsers(): bool
     {
-        return $this->payload['can_invite_users'] ?? null;
+        return $this->payload['can_invite_users'] ?? false;
     }
 
     /**
@@ -168,7 +168,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canInviteUsers
      * @return self
      */
-    public function withCanInviteUsers(?bool $canInviteUsers): self
+    public function withCanInviteUsers(bool $canInviteUsers): self
     {
         $payload = $this->payload;
         $payload['can_invite_users'] = $canInviteUsers;
@@ -180,9 +180,9 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canPinMessages(): ?bool
+    public function canPinMessages(): bool
     {
-        return $this->payload['can_pin_messages'] ?? null;
+        return $this->payload['can_pin_messages'] ?? false;
     }
 
     /**
@@ -191,7 +191,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canPinMessages
      * @return self
      */
-    public function withCanPinMessages(?bool $canPinMessages): self
+    public function withCanPinMessages(bool $canPinMessages): self
     {
         $payload = $this->payload;
         $payload['can_pin_messages'] = $canPinMessages;

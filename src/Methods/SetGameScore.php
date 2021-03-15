@@ -73,9 +73,9 @@ class SetGameScore extends Method
      *
      * @return bool|null
      */
-    public function force(): ?bool
+    public function force(): bool
     {
-        return $this->payload['force'] ?? null;
+        return $this->payload['force'] ?? false;
     }
 
     /**
@@ -84,7 +84,7 @@ class SetGameScore extends Method
      * @param bool|null $force
      * @return self
      */
-    public function withForce(?bool $force): self
+    public function withForce(bool $force): self
     {
         $payload = $this->payload;
         $payload['force'] = $force;
@@ -96,9 +96,9 @@ class SetGameScore extends Method
      *
      * @return bool|null
      */
-    public function disableEditMessage(): ?bool
+    public function disableEditMessage(): bool
     {
-        return $this->payload['disable_edit_message'] ?? null;
+        return $this->payload['disable_edit_message'] ?? false;
     }
 
     /**
@@ -107,7 +107,7 @@ class SetGameScore extends Method
      * @param bool|null $disableEditMessage
      * @return self
      */
-    public function withDisableEditMessage(?bool $disableEditMessage): self
+    public function withDisableEditMessage(bool $disableEditMessage): self
     {
         $payload = $this->payload;
         $payload['disable_edit_message'] = $disableEditMessage;

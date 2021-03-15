@@ -67,7 +67,7 @@ class ChatInviteLink implements \Tarik02\Telegram\Contracts\Payloadable
      */
     public function isPrimary(): bool
     {
-        return $this->payload['is_primary'];
+        return $this->payload['is_primary'] ?? false;
     }
 
     /**
@@ -90,7 +90,7 @@ class ChatInviteLink implements \Tarik02\Telegram\Contracts\Payloadable
      */
     public function isRevoked(): bool
     {
-        return $this->payload['is_revoked'];
+        return $this->payload['is_revoked'] ?? false;
     }
 
     /**

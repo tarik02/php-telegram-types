@@ -53,7 +53,7 @@ class Close extends Method
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;

@@ -385,9 +385,9 @@ class Chat implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function canSetStickerSet(): ?bool
+    public function canSetStickerSet(): bool
     {
-        return $this->payload['can_set_sticker_set'] ?? null;
+        return $this->payload['can_set_sticker_set'] ?? false;
     }
 
     /**
@@ -396,7 +396,7 @@ class Chat implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $canSetStickerSet
      * @return self
      */
-    public function withCanSetStickerSet(?bool $canSetStickerSet): self
+    public function withCanSetStickerSet(bool $canSetStickerSet): self
     {
         $payload = $this->payload;
         $payload['can_set_sticker_set'] = $canSetStickerSet;

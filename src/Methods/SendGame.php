@@ -73,9 +73,9 @@ class SendGame extends Method
      *
      * @return bool|null
      */
-    public function disableNotification(): ?bool
+    public function disableNotification(): bool
     {
-        return $this->payload['disable_notification'] ?? null;
+        return $this->payload['disable_notification'] ?? false;
     }
 
     /**
@@ -84,7 +84,7 @@ class SendGame extends Method
      * @param bool|null $disableNotification
      * @return self
      */
-    public function withDisableNotification(?bool $disableNotification): self
+    public function withDisableNotification(bool $disableNotification): self
     {
         $payload = $this->payload;
         $payload['disable_notification'] = $disableNotification;
@@ -119,9 +119,9 @@ class SendGame extends Method
      *
      * @return bool|null
      */
-    public function allowSendingWithoutReply(): ?bool
+    public function allowSendingWithoutReply(): bool
     {
-        return $this->payload['allow_sending_without_reply'] ?? null;
+        return $this->payload['allow_sending_without_reply'] ?? false;
     }
 
     /**
@@ -130,7 +130,7 @@ class SendGame extends Method
      * @param bool|null $allowSendingWithoutReply
      * @return self
      */
-    public function withAllowSendingWithoutReply(?bool $allowSendingWithoutReply): self
+    public function withAllowSendingWithoutReply(bool $allowSendingWithoutReply): self
     {
         $payload = $this->payload;
         $payload['allow_sending_without_reply'] = $allowSendingWithoutReply;

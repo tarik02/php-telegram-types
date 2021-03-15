@@ -42,9 +42,9 @@ class ReplyKeyboardMarkup implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function resizeKeyboard(): ?bool
+    public function resizeKeyboard(): bool
     {
-        return $this->payload['resize_keyboard'] ?? null;
+        return $this->payload['resize_keyboard'] ?? false;
     }
 
     /**
@@ -53,7 +53,7 @@ class ReplyKeyboardMarkup implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $resizeKeyboard
      * @return self
      */
-    public function withResizeKeyboard(?bool $resizeKeyboard): self
+    public function withResizeKeyboard(bool $resizeKeyboard): self
     {
         $payload = $this->payload;
         $payload['resize_keyboard'] = $resizeKeyboard;
@@ -65,9 +65,9 @@ class ReplyKeyboardMarkup implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function oneTimeKeyboard(): ?bool
+    public function oneTimeKeyboard(): bool
     {
-        return $this->payload['one_time_keyboard'] ?? null;
+        return $this->payload['one_time_keyboard'] ?? false;
     }
 
     /**
@@ -76,7 +76,7 @@ class ReplyKeyboardMarkup implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $oneTimeKeyboard
      * @return self
      */
-    public function withOneTimeKeyboard(?bool $oneTimeKeyboard): self
+    public function withOneTimeKeyboard(bool $oneTimeKeyboard): self
     {
         $payload = $this->payload;
         $payload['one_time_keyboard'] = $oneTimeKeyboard;
@@ -90,9 +90,9 @@ class ReplyKeyboardMarkup implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function selective(): ?bool
+    public function selective(): bool
     {
-        return $this->payload['selective'] ?? null;
+        return $this->payload['selective'] ?? false;
     }
 
     /**
@@ -103,7 +103,7 @@ class ReplyKeyboardMarkup implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $selective
      * @return self
      */
-    public function withSelective(?bool $selective): self
+    public function withSelective(bool $selective): self
     {
         $payload = $this->payload;
         $payload['selective'] = $selective;

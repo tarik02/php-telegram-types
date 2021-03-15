@@ -208,9 +208,9 @@ class InlineKeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return bool|null
      */
-    public function pay(): ?bool
+    public function pay(): bool
     {
-        return $this->payload['pay'] ?? null;
+        return $this->payload['pay'] ?? false;
     }
 
     /**
@@ -221,7 +221,7 @@ class InlineKeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
      * @param bool|null $pay
      * @return self
      */
-    public function withPay(?bool $pay): self
+    public function withPay(bool $pay): self
     {
         $payload = $this->payload;
         $payload['pay'] = $pay;

@@ -75,9 +75,9 @@ class AnswerCallbackQuery extends Method
      *
      * @return bool|null
      */
-    public function showAlert(): ?bool
+    public function showAlert(): bool
     {
-        return $this->payload['show_alert'] ?? null;
+        return $this->payload['show_alert'] ?? false;
     }
 
     /**
@@ -86,7 +86,7 @@ class AnswerCallbackQuery extends Method
      * @param bool|null $showAlert
      * @return self
      */
-    public function withShowAlert(?bool $showAlert): self
+    public function withShowAlert(bool $showAlert): self
     {
         $payload = $this->payload;
         $payload['show_alert'] = $showAlert;
@@ -174,7 +174,7 @@ class AnswerCallbackQuery extends Method
      */
     public static function createResponse($payload): bool
     {
-        return $payload;
+        return $payload ?? false;
     }
 
     private array $payload;
