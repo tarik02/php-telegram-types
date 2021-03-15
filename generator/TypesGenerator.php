@@ -63,8 +63,13 @@ final class TypesGenerator
      */
     public function generate(): void
     {
-        foreach ($this->apiData['objects'] as $entity) {
+        foreach ($this->apiData['objects'] as &$entity) {
             $type = $entity['type'] ?? '';
+
+            if ($type === '' && $entity['name'] !== 'InputFile') {
+                $type = $entity['type'] = 'properties';
+                $entity['properties'] = [];
+            }
 
             $this->entityMap[$entity['name']] = $entity;
 
