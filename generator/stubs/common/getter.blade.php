@@ -5,6 +5,8 @@
         }
 @endif
         return \Tarik02\Telegram\Entities\{{ $property['reference'] }}::fromPayload({{ $origin }});
+@elseif($property['type'] === 'bool')
+        return {{ $origin }} ?? false;
 @elseif($property['type'] === 'array' && $property['array']['type'] === 'reference')
 @if(! ($property['required'] ?? true))
         if (({{ $origin }} ?? null) === null) {

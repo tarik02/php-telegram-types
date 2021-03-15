@@ -364,7 +364,7 @@ final class TypesGenerator
 
         switch ($input['type']) {
             case 'bool':
-                return "{$nullablePrefix}bool";
+                return 'bool';
 
             case 'integer':
                 return "{$nullablePrefix}int";
