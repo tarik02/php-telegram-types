@@ -249,7 +249,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
-    public function explanationEntities(): \Tarik02\Telegram\Collections\MessageEntityCollection
+    public function explanationEntities(): ?\Tarik02\Telegram\Collections\MessageEntityCollection
     {
         if (($this->payload['explanation_entities'] ?? null) === null) {
             return null;
@@ -263,7 +263,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $explanationEntities
      * @return self
      */
-    public function withExplanationEntities(\Tarik02\Telegram\Collections\MessageEntityCollection $explanationEntities): self
+    public function withExplanationEntities(?\Tarik02\Telegram\Collections\MessageEntityCollection $explanationEntities): self
     {
         $payload = $this->payload;
         if ($explanationEntities !== null) {

@@ -19,7 +19,7 @@ class VoiceChatParticipantsInvited implements \Tarik02\Telegram\Contracts\Payloa
      *
      * @return \Tarik02\Telegram\Collections\UserCollection|null
      */
-    public function users(): \Tarik02\Telegram\Collections\UserCollection
+    public function users(): ?\Tarik02\Telegram\Collections\UserCollection
     {
         if (($this->payload['users'] ?? null) === null) {
             return null;
@@ -33,7 +33,7 @@ class VoiceChatParticipantsInvited implements \Tarik02\Telegram\Contracts\Payloa
      * @param \Tarik02\Telegram\Collections\UserCollection|null $users
      * @return self
      */
-    public function withUsers(\Tarik02\Telegram\Collections\UserCollection $users): self
+    public function withUsers(?\Tarik02\Telegram\Collections\UserCollection $users): self
     {
         $payload = $this->payload;
         if ($users !== null) {

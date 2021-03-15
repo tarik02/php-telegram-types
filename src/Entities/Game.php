@@ -111,7 +111,7 @@ class Game implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
-    public function textEntities(): \Tarik02\Telegram\Collections\MessageEntityCollection
+    public function textEntities(): ?\Tarik02\Telegram\Collections\MessageEntityCollection
     {
         if (($this->payload['text_entities'] ?? null) === null) {
             return null;
@@ -125,7 +125,7 @@ class Game implements \Tarik02\Telegram\Contracts\Payloadable
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $textEntities
      * @return self
      */
-    public function withTextEntities(\Tarik02\Telegram\Collections\MessageEntityCollection $textEntities): self
+    public function withTextEntities(?\Tarik02\Telegram\Collections\MessageEntityCollection $textEntities): self
     {
         $payload = $this->payload;
         if ($textEntities !== null) {

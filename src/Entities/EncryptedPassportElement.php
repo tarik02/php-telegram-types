@@ -111,7 +111,7 @@ class EncryptedPassportElement implements \Tarik02\Telegram\Contracts\Payloadabl
      *
      * @return \Tarik02\Telegram\Collections\PassportFileCollection|null
      */
-    public function files(): \Tarik02\Telegram\Collections\PassportFileCollection
+    public function files(): ?\Tarik02\Telegram\Collections\PassportFileCollection
     {
         if (($this->payload['files'] ?? null) === null) {
             return null;
@@ -125,7 +125,7 @@ class EncryptedPassportElement implements \Tarik02\Telegram\Contracts\Payloadabl
      * @param \Tarik02\Telegram\Collections\PassportFileCollection|null $files
      * @return self
      */
-    public function withFiles(\Tarik02\Telegram\Collections\PassportFileCollection $files): self
+    public function withFiles(?\Tarik02\Telegram\Collections\PassportFileCollection $files): self
     {
         $payload = $this->payload;
         if ($files !== null) {
@@ -231,7 +231,7 @@ class EncryptedPassportElement implements \Tarik02\Telegram\Contracts\Payloadabl
      *
      * @return \Tarik02\Telegram\Collections\PassportFileCollection|null
      */
-    public function translation(): \Tarik02\Telegram\Collections\PassportFileCollection
+    public function translation(): ?\Tarik02\Telegram\Collections\PassportFileCollection
     {
         if (($this->payload['translation'] ?? null) === null) {
             return null;
@@ -245,7 +245,7 @@ class EncryptedPassportElement implements \Tarik02\Telegram\Contracts\Payloadabl
      * @param \Tarik02\Telegram\Collections\PassportFileCollection|null $translation
      * @return self
      */
-    public function withTranslation(\Tarik02\Telegram\Collections\PassportFileCollection $translation): self
+    public function withTranslation(?\Tarik02\Telegram\Collections\PassportFileCollection $translation): self
     {
         $payload = $this->payload;
         if ($translation !== null) {

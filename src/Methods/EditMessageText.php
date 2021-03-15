@@ -142,7 +142,7 @@ class EditMessageText extends Method
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
-    public function entities(): \Tarik02\Telegram\Collections\MessageEntityCollection
+    public function entities(): ?\Tarik02\Telegram\Collections\MessageEntityCollection
     {
         if (($this->payload['entities'] ?? null) === null) {
             return null;
@@ -156,7 +156,7 @@ class EditMessageText extends Method
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $entities
      * @return self
      */
-    public function withEntities(\Tarik02\Telegram\Collections\MessageEntityCollection $entities): self
+    public function withEntities(?\Tarik02\Telegram\Collections\MessageEntityCollection $entities): self
     {
         $payload = $this->payload;
         if ($entities !== null) {

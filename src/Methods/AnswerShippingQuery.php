@@ -73,7 +73,7 @@ class AnswerShippingQuery extends Method
      *
      * @return \Tarik02\Telegram\Collections\ShippingOptionCollection|null
      */
-    public function shippingOptions(): \Tarik02\Telegram\Collections\ShippingOptionCollection
+    public function shippingOptions(): ?\Tarik02\Telegram\Collections\ShippingOptionCollection
     {
         if (($this->payload['shipping_options'] ?? null) === null) {
             return null;
@@ -87,7 +87,7 @@ class AnswerShippingQuery extends Method
      * @param \Tarik02\Telegram\Collections\ShippingOptionCollection|null $shippingOptions
      * @return self
      */
-    public function withShippingOptions(\Tarik02\Telegram\Collections\ShippingOptionCollection $shippingOptions): self
+    public function withShippingOptions(?\Tarik02\Telegram\Collections\ShippingOptionCollection $shippingOptions): self
     {
         $payload = $this->payload;
         if ($shippingOptions !== null) {

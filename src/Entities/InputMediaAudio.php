@@ -148,7 +148,7 @@ class InputMediaAudio implements \Tarik02\Telegram\Entities\InputMedia
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
-    public function captionEntities(): \Tarik02\Telegram\Collections\MessageEntityCollection
+    public function captionEntities(): ?\Tarik02\Telegram\Collections\MessageEntityCollection
     {
         if (($this->payload['caption_entities'] ?? null) === null) {
             return null;
@@ -162,7 +162,7 @@ class InputMediaAudio implements \Tarik02\Telegram\Entities\InputMedia
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $captionEntities
      * @return self
      */
-    public function withCaptionEntities(\Tarik02\Telegram\Collections\MessageEntityCollection $captionEntities): self
+    public function withCaptionEntities(?\Tarik02\Telegram\Collections\MessageEntityCollection $captionEntities): self
     {
         $payload = $this->payload;
         if ($captionEntities !== null) {

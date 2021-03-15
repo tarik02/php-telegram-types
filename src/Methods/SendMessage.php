@@ -98,7 +98,7 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
-    public function entities(): \Tarik02\Telegram\Collections\MessageEntityCollection
+    public function entities(): ?\Tarik02\Telegram\Collections\MessageEntityCollection
     {
         if (($this->payload['entities'] ?? null) === null) {
             return null;
@@ -112,7 +112,7 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $entities
      * @return self
      */
-    public function withEntities(\Tarik02\Telegram\Collections\MessageEntityCollection $entities): self
+    public function withEntities(?\Tarik02\Telegram\Collections\MessageEntityCollection $entities): self
     {
         $payload = $this->payload;
         if ($entities !== null) {

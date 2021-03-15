@@ -236,7 +236,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
-    public function explanationEntities(): \Tarik02\Telegram\Collections\MessageEntityCollection
+    public function explanationEntities(): ?\Tarik02\Telegram\Collections\MessageEntityCollection
     {
         if (($this->payload['explanation_entities'] ?? null) === null) {
             return null;
@@ -250,7 +250,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $explanationEntities
      * @return self
      */
-    public function withExplanationEntities(\Tarik02\Telegram\Collections\MessageEntityCollection $explanationEntities): self
+    public function withExplanationEntities(?\Tarik02\Telegram\Collections\MessageEntityCollection $explanationEntities): self
     {
         $payload = $this->payload;
         if ($explanationEntities !== null) {

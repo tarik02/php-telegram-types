@@ -452,7 +452,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
-    public function entities(): \Tarik02\Telegram\Collections\MessageEntityCollection
+    public function entities(): ?\Tarik02\Telegram\Collections\MessageEntityCollection
     {
         if (($this->payload['entities'] ?? null) === null) {
             return null;
@@ -466,7 +466,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $entities
      * @return self
      */
-    public function withEntities(\Tarik02\Telegram\Collections\MessageEntityCollection $entities): self
+    public function withEntities(?\Tarik02\Telegram\Collections\MessageEntityCollection $entities): self
     {
         $payload = $this->payload;
         if ($entities !== null) {
@@ -572,7 +572,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return \Tarik02\Telegram\Collections\PhotoSizeCollection|null
      */
-    public function photo(): \Tarik02\Telegram\Collections\PhotoSizeCollection
+    public function photo(): ?\Tarik02\Telegram\Collections\PhotoSizeCollection
     {
         if (($this->payload['photo'] ?? null) === null) {
             return null;
@@ -586,7 +586,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      * @param \Tarik02\Telegram\Collections\PhotoSizeCollection|null $photo
      * @return self
      */
-    public function withPhoto(\Tarik02\Telegram\Collections\PhotoSizeCollection $photo): self
+    public function withPhoto(?\Tarik02\Telegram\Collections\PhotoSizeCollection $photo): self
     {
         $payload = $this->payload;
         if ($photo !== null) {
@@ -745,7 +745,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
-    public function captionEntities(): \Tarik02\Telegram\Collections\MessageEntityCollection
+    public function captionEntities(): ?\Tarik02\Telegram\Collections\MessageEntityCollection
     {
         if (($this->payload['caption_entities'] ?? null) === null) {
             return null;
@@ -759,7 +759,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $captionEntities
      * @return self
      */
-    public function withCaptionEntities(\Tarik02\Telegram\Collections\MessageEntityCollection $captionEntities): self
+    public function withCaptionEntities(?\Tarik02\Telegram\Collections\MessageEntityCollection $captionEntities): self
     {
         $payload = $this->payload;
         if ($captionEntities !== null) {
@@ -955,7 +955,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return \Tarik02\Telegram\Collections\UserCollection|null
      */
-    public function newChatMembers(): \Tarik02\Telegram\Collections\UserCollection
+    public function newChatMembers(): ?\Tarik02\Telegram\Collections\UserCollection
     {
         if (($this->payload['new_chat_members'] ?? null) === null) {
             return null;
@@ -969,7 +969,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      * @param \Tarik02\Telegram\Collections\UserCollection|null $newChatMembers
      * @return self
      */
-    public function withNewChatMembers(\Tarik02\Telegram\Collections\UserCollection $newChatMembers): self
+    public function withNewChatMembers(?\Tarik02\Telegram\Collections\UserCollection $newChatMembers): self
     {
         $payload = $this->payload;
         if ($newChatMembers !== null) {
@@ -1038,7 +1038,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      *
      * @return \Tarik02\Telegram\Collections\PhotoSizeCollection|null
      */
-    public function newChatPhoto(): \Tarik02\Telegram\Collections\PhotoSizeCollection
+    public function newChatPhoto(): ?\Tarik02\Telegram\Collections\PhotoSizeCollection
     {
         if (($this->payload['new_chat_photo'] ?? null) === null) {
             return null;
@@ -1052,7 +1052,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
      * @param \Tarik02\Telegram\Collections\PhotoSizeCollection|null $newChatPhoto
      * @return self
      */
-    public function withNewChatPhoto(\Tarik02\Telegram\Collections\PhotoSizeCollection $newChatPhoto): self
+    public function withNewChatPhoto(?\Tarik02\Telegram\Collections\PhotoSizeCollection $newChatPhoto): self
     {
         $payload = $this->payload;
         if ($newChatPhoto !== null) {
