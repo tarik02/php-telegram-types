@@ -377,7 +377,7 @@ final class TypesGenerator
 
             case 'array':
                 if ($input['array']['type'] === 'reference') {
-                    return $this->generateCollection(
+                    return $nullablePrefix . $this->generateCollection(
                         \sprintf(
                             '%sCollection',
                             $input['array']['reference']
@@ -388,7 +388,7 @@ final class TypesGenerator
                         )
                     );
                 } elseif ($input['array']['type'] === 'array' && $input['array']['array']['type'] === 'reference') {
-                    return $this->generateCollection(
+                    return $nullablePrefix . $this->generateCollection(
                         \sprintf(
                             '%sCollectionCollection',
                             $input['array']['array']['reference']
