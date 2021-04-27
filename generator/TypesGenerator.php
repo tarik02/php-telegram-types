@@ -109,24 +109,10 @@ final class TypesGenerator
                 'methods' => $this->apiData['methods'],
             ]
         );
-        $this->render(
-            'Contracts/CallsAsyncMethods',
-            'Contracts/CallsAsyncMethods',
-            [
-                'methods' => $this->apiData['methods'],
-            ]
-        );
 
         $this->render(
             'Traits/CallsMethods',
             'Traits/CallsMethods',
-            [
-                'methods' => $this->apiData['methods'],
-            ]
-        );
-        $this->render(
-            'Traits/CallsAsyncMethods',
-            'Traits/CallsAsyncMethods',
             [
                 'methods' => $this->apiData['methods'],
             ]
