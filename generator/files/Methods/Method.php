@@ -14,7 +14,7 @@ abstract class Method implements Payloadable
     /**
      * @return string
      */
-    abstract public function name(): string;
+    abstract public function methodName(): string;
 
     /**
      * @param array $payload

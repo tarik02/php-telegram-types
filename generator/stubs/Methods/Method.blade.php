@@ -26,7 +26,7 @@ class {{ $class }} extends Method{{ count($interfaces) > 0 ? ' implements ' . im
     /**
      * {{ '@' }}return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return '{{ $method['name'] }}';
     }
