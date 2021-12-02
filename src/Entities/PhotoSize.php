@@ -107,7 +107,7 @@ class PhotoSize implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. File size
+     * *Optional*. File size in bytes
      *
      * @return int|null
      */
@@ -117,7 +117,7 @@ class PhotoSize implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. File size
+     * *Optional*. File size in bytes
      *
      * @param int|null $fileSize
      * @return self

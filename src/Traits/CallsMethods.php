@@ -264,10 +264,10 @@ trait CallsMethods
     }
 
     /**
-     * @param \Tarik02\Telegram\Methods\KickChatMember $method
+     * @param \Tarik02\Telegram\Methods\BanChatMember $method
      * @return bool
      */
-    public function kickChatMember(\Tarik02\Telegram\Methods\KickChatMember $method): bool
+    public function banChatMember(\Tarik02\Telegram\Methods\BanChatMember $method): bool
     {
         return $this->call($method);
     }
@@ -349,6 +349,24 @@ trait CallsMethods
      * @return \Tarik02\Telegram\Entities\ChatInviteLink
      */
     public function revokeChatInviteLink(\Tarik02\Telegram\Methods\RevokeChatInviteLink $method): \Tarik02\Telegram\Entities\ChatInviteLink
+    {
+        return $this->call($method);
+    }
+
+    /**
+     * @param \Tarik02\Telegram\Methods\ApproveChatJoinRequest $method
+     * @return bool
+     */
+    public function approveChatJoinRequest(\Tarik02\Telegram\Methods\ApproveChatJoinRequest $method): bool
+    {
+        return $this->call($method);
+    }
+
+    /**
+     * @param \Tarik02\Telegram\Methods\DeclineChatJoinRequest $method
+     * @return bool
+     */
+    public function declineChatJoinRequest(\Tarik02\Telegram\Methods\DeclineChatJoinRequest $method): bool
     {
         return $this->call($method);
     }
@@ -444,10 +462,10 @@ trait CallsMethods
     }
 
     /**
-     * @param \Tarik02\Telegram\Methods\GetChatMembersCount $method
+     * @param \Tarik02\Telegram\Methods\GetChatMemberCount $method
      * @return int
      */
-    public function getChatMembersCount(\Tarik02\Telegram\Methods\GetChatMembersCount $method): int
+    public function getChatMemberCount(\Tarik02\Telegram\Methods\GetChatMemberCount $method): int
     {
         return $this->call($method);
     }
@@ -493,6 +511,15 @@ trait CallsMethods
      * @return bool
      */
     public function setMyCommands(\Tarik02\Telegram\Methods\SetMyCommands $method): bool
+    {
+        return $this->call($method);
+    }
+
+    /**
+     * @param \Tarik02\Telegram\Methods\DeleteMyCommands $method
+     * @return bool
+     */
+    public function deleteMyCommands(\Tarik02\Telegram\Methods\DeleteMyCommands $method): bool
     {
         return $this->call($method);
     }

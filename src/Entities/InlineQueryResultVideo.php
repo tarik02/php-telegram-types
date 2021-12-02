@@ -109,7 +109,7 @@ class InlineQueryResultVideo implements \Tarik02\Telegram\Entities\InlineQueryRe
     }
 
     /**
-     * URL of the thumbnail (jpeg only) for the video
+     * URL of the thumbnail (JPEG only) for the video
      *
      * @return string
      */
@@ -119,7 +119,7 @@ class InlineQueryResultVideo implements \Tarik02\Telegram\Entities\InlineQueryRe
     }
 
     /**
-     * URL of the thumbnail (jpeg only) for the video
+     * URL of the thumbnail (JPEG only) for the video
      *
      * @param string $thumbUrl
      * @return self

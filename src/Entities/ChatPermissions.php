@@ -15,7 +15,7 @@ namespace Tarik02\Telegram\Entities;
 class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * *Optional*. True, if the user is allowed to send text messages, contacts, locations and venues
+     * *Optional*. *True*, if the user is allowed to send text messages, contacts, locations and venues
      *
      * @return bool|null
      */
@@ -25,7 +25,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to send text messages, contacts, locations and venues
+     * *Optional*. *True*, if the user is allowed to send text messages, contacts, locations and venues
      *
      * @param bool|null $canSendMessages
      * @return self
@@ -38,7 +38,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes, implies can\_send\_messages
+     * *Optional*. *True*, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes, implies can\_send\_messages
      *
      * @return bool|null
      */
@@ -48,7 +48,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes, implies can\_send\_messages
+     * *Optional*. *True*, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes, implies can\_send\_messages
      *
      * @param bool|null $canSendMediaMessages
      * @return self
@@ -61,7 +61,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to send polls, implies can\_send\_messages
+     * *Optional*. *True*, if the user is allowed to send polls, implies can\_send\_messages
      *
      * @return bool|null
      */
@@ -71,7 +71,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to send polls, implies can\_send\_messages
+     * *Optional*. *True*, if the user is allowed to send polls, implies can\_send\_messages
      *
      * @param bool|null $canSendPolls
      * @return self
@@ -84,7 +84,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to send animations, games, stickers and use inline bots, implies can\_send\_media\_messages
+     * *Optional*. *True*, if the user is allowed to send animations, games, stickers and use inline bots, implies can\_send\_media\_messages
      *
      * @return bool|null
      */
@@ -94,7 +94,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to send animations, games, stickers and use inline bots, implies can\_send\_media\_messages
+     * *Optional*. *True*, if the user is allowed to send animations, games, stickers and use inline bots, implies can\_send\_media\_messages
      *
      * @param bool|null $canSendOtherMessages
      * @return self
@@ -107,7 +107,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to add web page previews to their messages, implies can\_send\_media\_messages
+     * *Optional*. *True*, if the user is allowed to add web page previews to their messages, implies can\_send\_media\_messages
      *
      * @return bool|null
      */
@@ -117,7 +117,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to add web page previews to their messages, implies can\_send\_media\_messages
+     * *Optional*. *True*, if the user is allowed to add web page previews to their messages, implies can\_send\_media\_messages
      *
      * @param bool|null $canAddWebPagePreviews
      * @return self
@@ -130,7 +130,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups
+     * *Optional*. *True*, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups
      *
      * @return bool|null
      */
@@ -140,7 +140,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups
+     * *Optional*. *True*, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups
      *
      * @param bool|null $canChangeInfo
      * @return self
@@ -153,7 +153,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to invite new users to the chat
+     * *Optional*. *True*, if the user is allowed to invite new users to the chat
      *
      * @return bool|null
      */
@@ -163,7 +163,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to invite new users to the chat
+     * *Optional*. *True*, if the user is allowed to invite new users to the chat
      *
      * @param bool|null $canInviteUsers
      * @return self
@@ -176,7 +176,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to pin messages. Ignored in public supergroups
+     * *Optional*. *True*, if the user is allowed to pin messages. Ignored in public supergroups
      *
      * @return bool|null
      */
@@ -186,7 +186,7 @@ class ChatPermissions implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the user is allowed to pin messages. Ignored in public supergroups
+     * *Optional*. *True*, if the user is allowed to pin messages. Ignored in public supergroups
      *
      * @param bool|null $canPinMessages
      * @return self

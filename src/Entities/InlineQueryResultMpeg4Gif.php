@@ -130,7 +130,7 @@ class InlineQueryResultMpeg4Gif implements \Tarik02\Telegram\Entities\InlineQuer
     }
 
     /**
-     * *Optional*. Video duration
+     * *Optional*. Video duration in seconds
      *
      * @return int|null
      */
@@ -140,7 +140,7 @@ class InlineQueryResultMpeg4Gif implements \Tarik02\Telegram\Entities\InlineQuer
     }
 
     /**
-     * *Optional*. Video duration
+     * *Optional*. Video duration in seconds
      *
      * @param int|null $mpeg4Duration
      * @return self

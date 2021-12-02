@@ -5,23 +5,23 @@
 namespace Tarik02\Telegram\Methods;
 
 /**
- * Class GetChatMembersCount
+ * Class GetChatMemberCount
  *
  * Use this method to get the number of members in a chat. Returns *Int* on success.
  *
  * @package Tarik02\Telegram\Methods
- * @link https://core.telegram.org/bots/api/#getchatmemberscount
+ * @link https://core.telegram.org/bots/api/#getchatmembercount
  */
-class GetChatMembersCount extends Method implements \Tarik02\Telegram\Methods\HasRequiredChatId
+class GetChatMemberCount extends Method implements \Tarik02\Telegram\Methods\HasRequiredChatId
 {
     use \Tarik02\Telegram\Methods\HasRequiredChatIdTrait;
 
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
-        return 'getChatMembersCount';
+        return 'getChatMemberCount';
     }
 
     /**

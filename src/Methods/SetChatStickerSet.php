@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class SetChatStickerSet
  *
- * Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field *can\_set\_sticker\_set* optionally returned in [getChat](https://core.telegram.org/bots/api/#getchat) requests to check if the bot can use this method. Returns *True* on success.
+ * Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field *can\_set\_sticker\_set* optionally returned in [getChat](https://core.telegram.org/bots/api/#getchat) requests to check if the bot can use this method. Returns *True* on success.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#setchatstickerset
@@ -19,7 +19,7 @@ class SetChatStickerSet extends Method implements \Tarik02\Telegram\Methods\HasR
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'setChatStickerSet';
     }

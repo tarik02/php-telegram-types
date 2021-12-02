@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class SetChatPermissions
  *
- * Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the *can\_restrict\_members* admin rights. Returns *True* on success.
+ * Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the *can\_restrict\_members* administrator rights. Returns *True* on success.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#setchatpermissions
@@ -19,7 +19,7 @@ class SetChatPermissions extends Method implements \Tarik02\Telegram\Methods\Has
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'setChatPermissions';
     }
@@ -48,7 +48,7 @@ class SetChatPermissions extends Method implements \Tarik02\Telegram\Methods\Has
     }
 
     /**
-     * New default chat permissions
+     * A JSON-serialized object for new default chat permissions
      *
      * @return \Tarik02\Telegram\Entities\ChatPermissions
      */
@@ -58,7 +58,7 @@ class SetChatPermissions extends Method implements \Tarik02\Telegram\Methods\Has
     }
 
     /**
-     * New default chat permissions
+     * A JSON-serialized object for new default chat permissions
      *
      * @param \Tarik02\Telegram\Entities\ChatPermissions $permissions
      * @return self

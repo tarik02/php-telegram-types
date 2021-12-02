@@ -12,33 +12,35 @@ namespace Tarik02\Telegram\Methods;
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#sendinvoice
  */
-class SendInvoice extends Method
+class SendInvoice extends Method implements \Tarik02\Telegram\Methods\HasRequiredChatId
 {
+    use \Tarik02\Telegram\Methods\HasRequiredChatIdTrait;
+
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'sendInvoice';
     }
 
     /**
-     * Unique identifier for the target private chat
+     * Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      *
-     * @return int
+     * @return int|string
      */
-    public function chatId(): int
+    public function chatId()
     {
         return $this->payload['chat_id'];
     }
 
     /**
-     * Unique identifier for the target private chat
+     * Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      *
-     * @param int $chatId
+     * @param int|string $chatId
      * @return self
      */
-    public function withChatId(int $chatId): self
+    public function withChatId($chatId): self
     {
         $payload = $this->payload;
         $payload['chat_id'] = $chatId;
@@ -138,29 +140,6 @@ class SendInvoice extends Method
     }
 
     /**
-     * Unique deep-linking parameter that can be used to generate this invoice when used as a start parameter
-     *
-     * @return string
-     */
-    public function startParameter(): string
-    {
-        return $this->payload['start_parameter'];
-    }
-
-    /**
-     * Unique deep-linking parameter that can be used to generate this invoice when used as a start parameter
-     *
-     * @param string $startParameter
-     * @return self
-     */
-    public function withStartParameter(string $startParameter): self
-    {
-        $payload = $this->payload;
-        $payload['start_parameter'] = $startParameter;
-        return new self($payload);
-    }
-
-    /**
      * Three-letter ISO 4217 currency code, see [more on currencies](/bots/payments#supported-currencies)
      *
      * @return string
@@ -203,6 +182,75 @@ class SendInvoice extends Method
     {
         $payload = $this->payload;
         $payload['prices'] = $prices->toPayload();
+        return new self($payload);
+    }
+
+    /**
+     * The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0
+     *
+     * @return int|null
+     */
+    public function maxTipAmount(): ?int
+    {
+        return $this->payload['max_tip_amount'] ?? null;
+    }
+
+    /**
+     * The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0
+     *
+     * @param int|null $maxTipAmount
+     * @return self
+     */
+    public function withMaxTipAmount(?int $maxTipAmount): self
+    {
+        $payload = $this->payload;
+        $payload['max_tip_amount'] = $maxTipAmount;
+        return new self($payload);
+    }
+
+    /**
+     * A JSON-serialized array of suggested amounts of tips in the *smallest units* of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed *max\_tip\_amount*.
+     *
+     * @return int[]|null
+     */
+    public function suggestedTipAmounts(): ?array
+    {
+        return $this->payload['suggested_tip_amounts'] ?? null;
+    }
+
+    /**
+     * A JSON-serialized array of suggested amounts of tips in the *smallest units* of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed *max\_tip\_amount*.
+     *
+     * @param int[]|null $suggestedTipAmounts
+     * @return self
+     */
+    public function withSuggestedTipAmounts(?array $suggestedTipAmounts): self
+    {
+        $payload = $this->payload;
+        $payload['suggested_tip_amounts'] = $suggestedTipAmounts;
+        return new self($payload);
+    }
+
+    /**
+     * Unique deep-linking parameter. If left empty, **forwarded copies** of the sent message will have a *Pay* button, allowing multiple users to pay directly from the forwarded message, using the same invoice. If non-empty, forwarded copies of the sent message will have a *URL* button with a deep link to the bot (instead of a *Pay* button), with the value used as the start parameter
+     *
+     * @return string|null
+     */
+    public function startParameter(): ?string
+    {
+        return $this->payload['start_parameter'] ?? null;
+    }
+
+    /**
+     * Unique deep-linking parameter. If left empty, **forwarded copies** of the sent message will have a *Pay* button, allowing multiple users to pay directly from the forwarded message, using the same invoice. If non-empty, forwarded copies of the sent message will have a *URL* button with a deep link to the bot (instead of a *Pay* button), with the value used as the start parameter
+     *
+     * @param string|null $startParameter
+     * @return self
+     */
+    public function withStartParameter(?string $startParameter): self
+    {
+        $payload = $this->payload;
+        $payload['start_parameter'] = $startParameter;
         return new self($payload);
     }
 

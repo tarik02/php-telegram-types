@@ -19,7 +19,7 @@ class AnswerCallbackQuery extends Method
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'answerCallbackQuery';
     }
@@ -71,7 +71,7 @@ class AnswerCallbackQuery extends Method
     }
 
     /**
-     * If *true*, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to *false*.
+     * If *True*, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to *false*.
      *
      * @return bool|null
      */
@@ -81,7 +81,7 @@ class AnswerCallbackQuery extends Method
     }
 
     /**
-     * If *true*, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to *false*.
+     * If *True*, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to *false*.
      *
      * @param bool|null $showAlert
      * @return self

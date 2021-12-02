@@ -19,7 +19,7 @@ class SendVoice extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'sendVoice';
     }
@@ -128,7 +128,7 @@ class SendVoice extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     }
 
     /**
-     * List of special entities that appear in the caption, which can be specified instead of *parse\_mode*
+     * A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\_mode*
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
@@ -141,7 +141,7 @@ class SendVoice extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     }
 
     /**
-     * List of special entities that appear in the caption, which can be specified instead of *parse\_mode*
+     * A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\_mode*
      *
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $captionEntities
      * @return self

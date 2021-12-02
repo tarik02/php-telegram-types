@@ -202,7 +202,7 @@ class InlineKeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Specify True, to send a [Pay button](https://core.telegram.org/bots/api/#payments).  
+     * *Optional*. Specify *True*, to send a [Pay button](https://core.telegram.org/bots/api/#payments).  
      * 
      * **NOTE:** This type of button **must** always be the first button in the first row.
      *
@@ -214,7 +214,7 @@ class InlineKeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Specify True, to send a [Pay button](https://core.telegram.org/bots/api/#payments).  
+     * *Optional*. Specify *True*, to send a [Pay button](https://core.telegram.org/bots/api/#payments).  
      * 
      * **NOTE:** This type of button **must** always be the first button in the first row.
      *

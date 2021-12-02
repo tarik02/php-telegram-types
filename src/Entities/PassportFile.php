@@ -61,7 +61,7 @@ class PassportFile implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * File size
+     * File size in bytes
      *
      * @return int
      */
@@ -71,7 +71,7 @@ class PassportFile implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * File size
+     * File size in bytes
      *
      * @param int $fileSize
      * @return self

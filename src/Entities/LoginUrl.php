@@ -92,7 +92,7 @@ class LoginUrl implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Pass True to request the permission for your bot to send messages to the user.
+     * *Optional*. Pass *True* to request the permission for your bot to send messages to the user.
      *
      * @return bool|null
      */
@@ -102,7 +102,7 @@ class LoginUrl implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Pass True to request the permission for your bot to send messages to the user.
+     * *Optional*. Pass *True* to request the permission for your bot to send messages to the user.
      *
      * @param bool|null $requestWriteAccess
      * @return self

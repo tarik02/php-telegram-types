@@ -61,7 +61,7 @@ class InlineQueryResultPhoto implements \Tarik02\Telegram\Entities\InlineQueryRe
     }
 
     /**
-     * A valid URL of the photo. Photo must be in **jpeg** format. Photo size must not exceed 5MB
+     * A valid URL of the photo. Photo must be in **JPEG** format. Photo size must not exceed 5MB
      *
      * @return string
      */
@@ -71,7 +71,7 @@ class InlineQueryResultPhoto implements \Tarik02\Telegram\Entities\InlineQueryRe
     }
 
     /**
-     * A valid URL of the photo. Photo must be in **jpeg** format. Photo size must not exceed 5MB
+     * A valid URL of the photo. Photo must be in **JPEG** format. Photo size must not exceed 5MB
      *
      * @param string $photoUrl
      * @return self

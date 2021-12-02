@@ -38,7 +38,7 @@ class WebhookInfo implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if a custom certificate was provided for webhook certificate checks
+     * *True*, if a custom certificate was provided for webhook certificate checks
      *
      * @return bool
      */
@@ -48,7 +48,7 @@ class WebhookInfo implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if a custom certificate was provided for webhook certificate checks
+     * *True*, if a custom certificate was provided for webhook certificate checks
      *
      * @param bool $hasCustomCertificate
      * @return self

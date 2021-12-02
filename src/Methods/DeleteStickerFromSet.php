@@ -17,7 +17,7 @@ class DeleteStickerFromSet extends Method
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'deleteStickerFromSet';
     }

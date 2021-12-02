@@ -57,6 +57,9 @@ trait HandlesUpdate
             case null !== $chatMember = $update->chatMember():
                 return $this->handleChatMember($chatMember);
 
+            case null !== $chatJoinRequest = $update->chatJoinRequest():
+                return $this->handleChatJoinRequest($chatJoinRequest);
+
             default:
                 throw new \InvalidArgumentException('Supplied update is empty');
         }
@@ -175,6 +178,15 @@ trait HandlesUpdate
      * @return \Tarik02\Telegram\Contracts\Response|null
      */
     public function handleChatMember(\Tarik02\Telegram\Entities\ChatMemberUpdated $chatMember): ?\Tarik02\Telegram\Contracts\Response
+    {
+        return null;
+    }
+
+    /**
+     * @param \Tarik02\Telegram\Entities\ChatJoinRequest $chatJoinRequest
+     * @return \Tarik02\Telegram\Contracts\Response|null
+     */
+    public function handleChatJoinRequest(\Tarik02\Telegram\Entities\ChatJoinRequest $chatJoinRequest): ?\Tarik02\Telegram\Contracts\Response
     {
         return null;
     }

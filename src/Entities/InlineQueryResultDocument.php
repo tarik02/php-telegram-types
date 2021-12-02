@@ -289,7 +289,7 @@ class InlineQueryResultDocument implements \Tarik02\Telegram\Entities\InlineQuer
     }
 
     /**
-     * *Optional*. URL of the thumbnail (jpeg only) for the file
+     * *Optional*. URL of the thumbnail (JPEG only) for the file
      *
      * @return string|null
      */
@@ -299,7 +299,7 @@ class InlineQueryResultDocument implements \Tarik02\Telegram\Entities\InlineQuer
     }
 
     /**
-     * *Optional*. URL of the thumbnail (jpeg only) for the file
+     * *Optional*. URL of the thumbnail (JPEG only) for the file
      *
      * @param string|null $thumbUrl
      * @return self

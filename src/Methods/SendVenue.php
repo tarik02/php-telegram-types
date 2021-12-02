@@ -19,7 +19,7 @@ class SendVenue extends Method implements \Tarik02\Telegram\Methods\HasRequiredC
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'sendVenue';
     }

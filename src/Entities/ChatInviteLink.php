@@ -61,7 +61,30 @@ class ChatInviteLink implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the link is primary
+     * *True*, if users joining the chat via the link need to be approved by chat administrators
+     *
+     * @return bool
+     */
+    public function createsJoinRequest(): bool
+    {
+        return $this->payload['creates_join_request'] ?? false;
+    }
+
+    /**
+     * *True*, if users joining the chat via the link need to be approved by chat administrators
+     *
+     * @param bool $createsJoinRequest
+     * @return self
+     */
+    public function withCreatesJoinRequest(bool $createsJoinRequest): self
+    {
+        $payload = $this->payload;
+        $payload['creates_join_request'] = $createsJoinRequest;
+        return new self($payload);
+    }
+
+    /**
+     * *True*, if the link is primary
      *
      * @return bool
      */
@@ -71,7 +94,7 @@ class ChatInviteLink implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the link is primary
+     * *True*, if the link is primary
      *
      * @param bool $isPrimary
      * @return self
@@ -84,7 +107,7 @@ class ChatInviteLink implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the link is revoked
+     * *True*, if the link is revoked
      *
      * @return bool
      */
@@ -94,7 +117,7 @@ class ChatInviteLink implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the link is revoked
+     * *True*, if the link is revoked
      *
      * @param bool $isRevoked
      * @return self
@@ -103,6 +126,29 @@ class ChatInviteLink implements \Tarik02\Telegram\Contracts\Payloadable
     {
         $payload = $this->payload;
         $payload['is_revoked'] = $isRevoked;
+        return new self($payload);
+    }
+
+    /**
+     * *Optional*. Invite link name
+     *
+     * @return string|null
+     */
+    public function name(): ?string
+    {
+        return $this->payload['name'] ?? null;
+    }
+
+    /**
+     * *Optional*. Invite link name
+     *
+     * @param string|null $name
+     * @return self
+     */
+    public function withName(?string $name): self
+    {
+        $payload = $this->payload;
+        $payload['name'] = $name;
         return new self($payload);
     }
 
@@ -149,6 +195,29 @@ class ChatInviteLink implements \Tarik02\Telegram\Contracts\Payloadable
     {
         $payload = $this->payload;
         $payload['member_limit'] = $memberLimit;
+        return new self($payload);
+    }
+
+    /**
+     * *Optional*. Number of pending join requests created using this link
+     *
+     * @return int|null
+     */
+    public function pendingJoinRequestCount(): ?int
+    {
+        return $this->payload['pending_join_request_count'] ?? null;
+    }
+
+    /**
+     * *Optional*. Number of pending join requests created using this link
+     *
+     * @param int|null $pendingJoinRequestCount
+     * @return self
+     */
+    public function withPendingJoinRequestCount(?int $pendingJoinRequestCount): self
+    {
+        $payload = $this->payload;
+        $payload['pending_join_request_count'] = $pendingJoinRequestCount;
         return new self($payload);
     }
 

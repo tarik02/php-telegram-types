@@ -17,7 +17,7 @@ class CreateNewStickerSet extends Method
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'createNewStickerSet';
     }
@@ -46,7 +46,7 @@ class CreateNewStickerSet extends Method
     }
 
     /**
-     * Short name of sticker set, to be used in `t.me/addstickers/` URLs (e.g., *animals*). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in *“\_by\_<bot username>”*. *<bot\_username>* is case insensitive. 1-64 characters.
+     * Short name of sticker set, to be used in `t.me/addstickers/` URLs (e.g., *animals*). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in *“\_by\_\<bot username\>”*. *\<bot\_username\>* is case insensitive. 1-64 characters.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class CreateNewStickerSet extends Method
     }
 
     /**
-     * Short name of sticker set, to be used in `t.me/addstickers/` URLs (e.g., *animals*). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in *“\_by\_<bot username>”*. *<bot\_username>* is case insensitive. 1-64 characters.
+     * Short name of sticker set, to be used in `t.me/addstickers/` URLs (e.g., *animals*). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in *“\_by\_\<bot username\>”*. *\<bot\_username\>* is case insensitive. 1-64 characters.
      *
      * @param string $name
      * @return self
@@ -129,7 +129,7 @@ class CreateNewStickerSet extends Method
     }
 
     /**
-     * **TGS** animation with the sticker, uploaded using multipart/form-data. See [](https://core.telegram.org/animated_stickers#technical-requirements)[https://core.telegram.org/animated\_stickers#technical-requirements](https://core.telegram.org/animated_stickers#technical-requirements) for technical requirements
+     * **TGS** animation with the sticker, uploaded using multipart/form-data. See [https://core.telegram.org/animated\_stickers#technical-requirements](https://core.telegram.org/animated_stickers#technical-requirements) for technical requirements
      *
      * @return \Tarik02\Telegram\Entities\InputFile|null
      */
@@ -142,7 +142,7 @@ class CreateNewStickerSet extends Method
     }
 
     /**
-     * **TGS** animation with the sticker, uploaded using multipart/form-data. See [](https://core.telegram.org/animated_stickers#technical-requirements)[https://core.telegram.org/animated\_stickers#technical-requirements](https://core.telegram.org/animated_stickers#technical-requirements) for technical requirements
+     * **TGS** animation with the sticker, uploaded using multipart/form-data. See [https://core.telegram.org/animated\_stickers#technical-requirements](https://core.telegram.org/animated_stickers#technical-requirements) for technical requirements
      *
      * @param \Tarik02\Telegram\Entities\InputFile|null $tgsSticker
      * @return self

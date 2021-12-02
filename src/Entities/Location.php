@@ -84,7 +84,7 @@ class Location implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Time relative to the message sending date, during which the location can be updated, in seconds. For active live locations only.
+     * *Optional*. Time relative to the message sending date, during which the location can be updated; in seconds. For active live locations only.
      *
      * @return int|null
      */
@@ -94,7 +94,7 @@ class Location implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Time relative to the message sending date, during which the location can be updated, in seconds. For active live locations only.
+     * *Optional*. Time relative to the message sending date, during which the location can be updated; in seconds. For active live locations only.
      *
      * @param int|null $livePeriod
      * @return self

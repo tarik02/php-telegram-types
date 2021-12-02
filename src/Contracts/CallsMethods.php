@@ -186,10 +186,10 @@ interface CallsMethods
     public function getFile(\Tarik02\Telegram\Methods\GetFile $method): \Tarik02\Telegram\Entities\File;
 
     /**
-     * @param \Tarik02\Telegram\Methods\KickChatMember $method
+     * @param \Tarik02\Telegram\Methods\BanChatMember $method
      * @return bool
      */
-    public function kickChatMember(\Tarik02\Telegram\Methods\KickChatMember $method): bool;
+    public function banChatMember(\Tarik02\Telegram\Methods\BanChatMember $method): bool;
 
     /**
      * @param \Tarik02\Telegram\Methods\UnbanChatMember $method
@@ -244,6 +244,18 @@ interface CallsMethods
      * @return \Tarik02\Telegram\Entities\ChatInviteLink
      */
     public function revokeChatInviteLink(\Tarik02\Telegram\Methods\RevokeChatInviteLink $method): \Tarik02\Telegram\Entities\ChatInviteLink;
+
+    /**
+     * @param \Tarik02\Telegram\Methods\ApproveChatJoinRequest $method
+     * @return bool
+     */
+    public function approveChatJoinRequest(\Tarik02\Telegram\Methods\ApproveChatJoinRequest $method): bool;
+
+    /**
+     * @param \Tarik02\Telegram\Methods\DeclineChatJoinRequest $method
+     * @return bool
+     */
+    public function declineChatJoinRequest(\Tarik02\Telegram\Methods\DeclineChatJoinRequest $method): bool;
 
     /**
      * @param \Tarik02\Telegram\Methods\SetChatPhoto $method
@@ -306,10 +318,10 @@ interface CallsMethods
     public function getChatAdministrators(\Tarik02\Telegram\Methods\GetChatAdministrators $method): \Tarik02\Telegram\Collections\ChatMemberCollection;
 
     /**
-     * @param \Tarik02\Telegram\Methods\GetChatMembersCount $method
+     * @param \Tarik02\Telegram\Methods\GetChatMemberCount $method
      * @return int
      */
-    public function getChatMembersCount(\Tarik02\Telegram\Methods\GetChatMembersCount $method): int;
+    public function getChatMemberCount(\Tarik02\Telegram\Methods\GetChatMemberCount $method): int;
 
     /**
      * @param \Tarik02\Telegram\Methods\GetChatMember $method
@@ -340,6 +352,12 @@ interface CallsMethods
      * @return bool
      */
     public function setMyCommands(\Tarik02\Telegram\Methods\SetMyCommands $method): bool;
+
+    /**
+     * @param \Tarik02\Telegram\Methods\DeleteMyCommands $method
+     * @return bool
+     */
+    public function deleteMyCommands(\Tarik02\Telegram\Methods\DeleteMyCommands $method): bool;
 
     /**
      * @param \Tarik02\Telegram\Methods\GetMyCommands $method

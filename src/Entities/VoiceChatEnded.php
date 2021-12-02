@@ -15,7 +15,7 @@ namespace Tarik02\Telegram\Entities;
 class VoiceChatEnded implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * Voice chat duration; in seconds
+     * Voice chat duration in seconds
      *
      * @return int
      */
@@ -25,7 +25,7 @@ class VoiceChatEnded implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * Voice chat duration; in seconds
+     * Voice chat duration in seconds
      *
      * @param int $duration
      * @return self

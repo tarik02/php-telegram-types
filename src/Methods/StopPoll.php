@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class StopPoll
  *
- * Use this method to stop a poll which was sent by the bot. On success, the stopped [Poll](https://core.telegram.org/bots/api/#poll) with the final results is returned.
+ * Use this method to stop a poll which was sent by the bot. On success, the stopped [Poll](https://core.telegram.org/bots/api/#poll) is returned.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#stoppoll
@@ -19,7 +19,7 @@ class StopPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'stopPoll';
     }

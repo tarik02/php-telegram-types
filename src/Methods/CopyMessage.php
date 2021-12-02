@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class CopyMessage
  *
- * Use this method to copy messages of any kind. The method is analogous to the method [forwardMessage](https://core.telegram.org/bots/api/#forwardmessage), but the copied message doesn't have a link to the original message. Returns the [MessageId](https://core.telegram.org/bots/api/#messageid) of the sent message on success.
+ * Use this method to copy messages of any kind. Service messages and invoice messages can't be copied. The method is analogous to the method [forwardMessage](https://core.telegram.org/bots/api/#forwardmessage), but the copied message doesn't have a link to the original message. Returns the [MessageId](https://core.telegram.org/bots/api/#messageid) of the sent message on success.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#copymessage
@@ -19,7 +19,7 @@ class CopyMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'copyMessage';
     }
@@ -140,7 +140,7 @@ class CopyMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
     }
 
     /**
-     * List of special entities that appear in the new caption, which can be specified instead of *parse\_mode*
+     * A JSON-serialized list of special entities that appear in the new caption, which can be specified instead of *parse\_mode*
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
@@ -153,7 +153,7 @@ class CopyMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
     }
 
     /**
-     * List of special entities that appear in the new caption, which can be specified instead of *parse\_mode*
+     * A JSON-serialized list of special entities that appear in the new caption, which can be specified instead of *parse\_mode*
      *
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $captionEntities
      * @return self

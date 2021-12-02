@@ -15,7 +15,7 @@ namespace Tarik02\Telegram\Entities;
 class MessageAutoDeleteTimerChanged implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * New auto-delete time for messages in the chat
+     * New auto-delete time for messages in the chat; in seconds
      *
      * @return int
      */
@@ -25,7 +25,7 @@ class MessageAutoDeleteTimerChanged implements \Tarik02\Telegram\Contracts\Paylo
     }
 
     /**
-     * New auto-delete time for messages in the chat
+     * New auto-delete time for messages in the chat; in seconds
      *
      * @param int $messageAutoDeleteTime
      * @return self

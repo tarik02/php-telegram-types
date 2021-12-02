@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class DeleteChatStickerSet
  *
- * Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field *can\_set\_sticker\_set* optionally returned in [getChat](https://core.telegram.org/bots/api/#getchat) requests to check if the bot can use this method. Returns *True* on success.
+ * Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field *can\_set\_sticker\_set* optionally returned in [getChat](https://core.telegram.org/bots/api/#getchat) requests to check if the bot can use this method. Returns *True* on success.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#deletechatstickerset
@@ -19,7 +19,7 @@ class DeleteChatStickerSet extends Method implements \Tarik02\Telegram\Methods\H
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'deleteChatStickerSet';
     }

@@ -19,7 +19,7 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'sendMessage';
     }
@@ -94,7 +94,7 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
     }
 
     /**
-     * List of special entities that appear in message text, which can be specified instead of *parse\_mode*
+     * A JSON-serialized list of special entities that appear in message text, which can be specified instead of *parse\_mode*
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
@@ -107,7 +107,7 @@ class SendMessage extends Method implements \Tarik02\Telegram\Methods\HasRequire
     }
 
     /**
-     * List of special entities that appear in message text, which can be specified instead of *parse\_mode*
+     * A JSON-serialized list of special entities that appear in message text, which can be specified instead of *parse\_mode*
      *
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $entities
      * @return self

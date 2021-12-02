@@ -19,7 +19,7 @@ class GetChatMember extends Method implements \Tarik02\Telegram\Methods\HasRequi
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'getChatMember';
     }

@@ -429,6 +429,36 @@ class Update implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
+     * *Optional*. A request to join the chat has been sent. The bot must have the *can\_invite\_users* administrator right in the chat to receive these updates.
+     *
+     * @return \Tarik02\Telegram\Entities\ChatJoinRequest|null
+     */
+    public function chatJoinRequest(): ?\Tarik02\Telegram\Entities\ChatJoinRequest
+    {
+        if (($this->payload['chat_join_request'] ?? null) === null) {
+            return null;
+        }
+        return \Tarik02\Telegram\Entities\ChatJoinRequest::fromPayload($this->payload['chat_join_request']);
+    }
+
+    /**
+     * *Optional*. A request to join the chat has been sent. The bot must have the *can\_invite\_users* administrator right in the chat to receive these updates.
+     *
+     * @param \Tarik02\Telegram\Entities\ChatJoinRequest|null $chatJoinRequest
+     * @return self
+     */
+    public function withChatJoinRequest(?\Tarik02\Telegram\Entities\ChatJoinRequest $chatJoinRequest): self
+    {
+        $payload = $this->payload;
+        if ($chatJoinRequest !== null) {
+            $payload['chat_join_request'] = $chatJoinRequest->toPayload();
+        } else {
+            unset($payload['chat_join_request']);
+        }
+        return new self($payload);
+    }
+
+    /**
      * @return array
      */
     public function toPayload(): array

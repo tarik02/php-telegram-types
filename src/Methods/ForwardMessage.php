@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class ForwardMessage
  *
- * Use this method to forward messages of any kind. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
+ * Use this method to forward messages of any kind. Service messages can't be forwarded. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#forwardmessage
@@ -19,7 +19,7 @@ class ForwardMessage extends Method implements \Tarik02\Telegram\Methods\HasRequ
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'forwardMessage';
     }

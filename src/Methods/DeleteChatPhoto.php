@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class DeleteChatPhoto
  *
- * Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns *True* on success.
+ * Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#deletechatphoto
@@ -19,7 +19,7 @@ class DeleteChatPhoto extends Method implements \Tarik02\Telegram\Methods\HasReq
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'deleteChatPhoto';
     }

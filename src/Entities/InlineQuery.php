@@ -61,36 +61,6 @@ class InlineQuery implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Sender location, only for bots that request user location
-     *
-     * @return \Tarik02\Telegram\Entities\Location|null
-     */
-    public function location(): ?\Tarik02\Telegram\Entities\Location
-    {
-        if (($this->payload['location'] ?? null) === null) {
-            return null;
-        }
-        return \Tarik02\Telegram\Entities\Location::fromPayload($this->payload['location']);
-    }
-
-    /**
-     * *Optional*. Sender location, only for bots that request user location
-     *
-     * @param \Tarik02\Telegram\Entities\Location|null $location
-     * @return self
-     */
-    public function withLocation(?\Tarik02\Telegram\Entities\Location $location): self
-    {
-        $payload = $this->payload;
-        if ($location !== null) {
-            $payload['location'] = $location->toPayload();
-        } else {
-            unset($payload['location']);
-        }
-        return new self($payload);
-    }
-
-    /**
      * Text of the query (up to 256 characters)
      *
      * @return string
@@ -133,6 +103,59 @@ class InlineQuery implements \Tarik02\Telegram\Contracts\Payloadable
     {
         $payload = $this->payload;
         $payload['offset'] = $offset;
+        return new self($payload);
+    }
+
+    /**
+     * *Optional*. Type of the chat, from which the inline query was sent. Can be either “sender” for a private chat with the inline query sender, “private”, “group”, “supergroup”, or “channel”. The chat type should be always known for requests sent from official clients and most third-party clients, unless the request was sent from a secret chat
+     *
+     * @return string|null
+     */
+    public function chatType(): ?string
+    {
+        return $this->payload['chat_type'] ?? null;
+    }
+
+    /**
+     * *Optional*. Type of the chat, from which the inline query was sent. Can be either “sender” for a private chat with the inline query sender, “private”, “group”, “supergroup”, or “channel”. The chat type should be always known for requests sent from official clients and most third-party clients, unless the request was sent from a secret chat
+     *
+     * @param string|null $chatType
+     * @return self
+     */
+    public function withChatType(?string $chatType): self
+    {
+        $payload = $this->payload;
+        $payload['chat_type'] = $chatType;
+        return new self($payload);
+    }
+
+    /**
+     * *Optional*. Sender location, only for bots that request user location
+     *
+     * @return \Tarik02\Telegram\Entities\Location|null
+     */
+    public function location(): ?\Tarik02\Telegram\Entities\Location
+    {
+        if (($this->payload['location'] ?? null) === null) {
+            return null;
+        }
+        return \Tarik02\Telegram\Entities\Location::fromPayload($this->payload['location']);
+    }
+
+    /**
+     * *Optional*. Sender location, only for bots that request user location
+     *
+     * @param \Tarik02\Telegram\Entities\Location|null $location
+     * @return self
+     */
+    public function withLocation(?\Tarik02\Telegram\Entities\Location $location): self
+    {
+        $payload = $this->payload;
+        if ($location !== null) {
+            $payload['location'] = $location->toPayload();
+        } else {
+            unset($payload['location']);
+        }
         return new self($payload);
     }
 

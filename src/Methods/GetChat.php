@@ -19,7 +19,7 @@ class GetChat extends Method implements \Tarik02\Telegram\Methods\HasRequiredCha
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'getChat';
     }

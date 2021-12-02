@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class CreateChatInviteLink
  *
- * Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. The link can be revoked using the method [revokeChatInviteLink](https://core.telegram.org/bots/api/#revokechatinvitelink). Returns the new invite link as [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
+ * Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. The link can be revoked using the method [revokeChatInviteLink](https://core.telegram.org/bots/api/#revokechatinvitelink). Returns the new invite link as [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#createchatinvitelink
@@ -19,7 +19,7 @@ class CreateChatInviteLink extends Method implements \Tarik02\Telegram\Methods\H
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'createChatInviteLink';
     }
@@ -44,6 +44,29 @@ class CreateChatInviteLink extends Method implements \Tarik02\Telegram\Methods\H
     {
         $payload = $this->payload;
         $payload['chat_id'] = $chatId;
+        return new self($payload);
+    }
+
+    /**
+     * Invite link name; 0-32 characters
+     *
+     * @return string|null
+     */
+    public function name(): ?string
+    {
+        return $this->payload['name'] ?? null;
+    }
+
+    /**
+     * Invite link name; 0-32 characters
+     *
+     * @param string|null $name
+     * @return self
+     */
+    public function withName(?string $name): self
+    {
+        $payload = $this->payload;
+        $payload['name'] = $name;
         return new self($payload);
     }
 
@@ -90,6 +113,29 @@ class CreateChatInviteLink extends Method implements \Tarik02\Telegram\Methods\H
     {
         $payload = $this->payload;
         $payload['member_limit'] = $memberLimit;
+        return new self($payload);
+    }
+
+    /**
+     * *True*, if users joining the chat via the link need to be approved by chat administrators. If *True*, *member\_limit* can't be specified
+     *
+     * @return bool|null
+     */
+    public function createsJoinRequest(): bool
+    {
+        return $this->payload['creates_join_request'] ?? false;
+    }
+
+    /**
+     * *True*, if users joining the chat via the link need to be approved by chat administrators. If *True*, *member\_limit* can't be specified
+     *
+     * @param bool|null $createsJoinRequest
+     * @return self
+     */
+    public function withCreatesJoinRequest(bool $createsJoinRequest): self
+    {
+        $payload = $this->payload;
+        $payload['creates_join_request'] = $createsJoinRequest;
         return new self($payload);
     }
 

@@ -63,7 +63,7 @@ class File implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. File size, if known
+     * *Optional*. File size in bytes, if known
      *
      * @return int|null
      */
@@ -73,7 +73,7 @@ class File implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. File size, if known
+     * *Optional*. File size in bytes, if known
      *
      * @param int|null $fileSize
      * @return self

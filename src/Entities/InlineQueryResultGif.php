@@ -130,7 +130,7 @@ class InlineQueryResultGif implements \Tarik02\Telegram\Entities\InlineQueryResu
     }
 
     /**
-     * *Optional*. Duration of the GIF
+     * *Optional*. Duration of the GIF in seconds
      *
      * @return int|null
      */
@@ -140,7 +140,7 @@ class InlineQueryResultGif implements \Tarik02\Telegram\Entities\InlineQueryResu
     }
 
     /**
-     * *Optional*. Duration of the GIF
+     * *Optional*. Duration of the GIF in seconds
      *
      * @param int|null $gifDuration
      * @return self

@@ -19,7 +19,7 @@ class SendMediaGroup extends Method implements \Tarik02\Telegram\Methods\HasRequ
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'sendMediaGroup';
     }

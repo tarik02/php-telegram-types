@@ -17,7 +17,7 @@ class AddStickerToSet extends Method
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'addStickerToSet';
     }
@@ -106,7 +106,7 @@ class AddStickerToSet extends Method
     }
 
     /**
-     * **TGS** animation with the sticker, uploaded using multipart/form-data. See [](https://core.telegram.org/animated_stickers#technical-requirements)[https://core.telegram.org/animated\_stickers#technical-requirements](https://core.telegram.org/animated_stickers#technical-requirements) for technical requirements
+     * **TGS** animation with the sticker, uploaded using multipart/form-data. See [https://core.telegram.org/animated\_stickers#technical-requirements](https://core.telegram.org/animated_stickers#technical-requirements) for technical requirements
      *
      * @return \Tarik02\Telegram\Entities\InputFile|null
      */
@@ -119,7 +119,7 @@ class AddStickerToSet extends Method
     }
 
     /**
-     * **TGS** animation with the sticker, uploaded using multipart/form-data. See [](https://core.telegram.org/animated_stickers#technical-requirements)[https://core.telegram.org/animated\_stickers#technical-requirements](https://core.telegram.org/animated_stickers#technical-requirements) for technical requirements
+     * **TGS** animation with the sticker, uploaded using multipart/form-data. See [https://core.telegram.org/animated\_stickers#technical-requirements](https://core.telegram.org/animated_stickers#technical-requirements) for technical requirements
      *
      * @param \Tarik02\Telegram\Entities\InputFile|null $tgsSticker
      * @return self

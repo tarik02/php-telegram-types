@@ -13,13 +13,13 @@ final class TelegramTypes
 {
     const VERSION = [
         'major' => 5,
-        'minor' => 1,
+        'minor' => 4,
         'patch' => 0,
     ];
     const RECENT_CHANGES = [
         'year' => 2021,
-        'month' => 3,
-        'day' => 9,
+        'month' => 11,
+        'day' => 5,
     ];
 
     private function __construct()

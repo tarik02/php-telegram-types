@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class SetGameScore
  *
- * Use this method to set the score of the specified user in a game. On success, if the message was sent by the bot, returns the edited [Message](https://core.telegram.org/bots/api/#message), otherwise returns *True*. Returns an error, if the new score is not greater than the user's current score in the chat and *force* is *False*.
+ * Use this method to set the score of the specified user in a game message. On success, if the message is not an inline message, the [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Returns an error, if the new score is not greater than the user's current score in the chat and *force* is *False*.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#setgamescore
@@ -17,7 +17,7 @@ class SetGameScore extends Method
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'setGameScore';
     }
@@ -69,7 +69,7 @@ class SetGameScore extends Method
     }
 
     /**
-     * Pass True, if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters
+     * Pass *True*, if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters
      *
      * @return bool|null
      */
@@ -79,7 +79,7 @@ class SetGameScore extends Method
     }
 
     /**
-     * Pass True, if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters
+     * Pass *True*, if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters
      *
      * @param bool|null $force
      * @return self
@@ -92,7 +92,7 @@ class SetGameScore extends Method
     }
 
     /**
-     * Pass True, if the game message should not be automatically edited to include the current scoreboard
+     * Pass *True*, if the game message should not be automatically edited to include the current scoreboard
      *
      * @return bool|null
      */
@@ -102,7 +102,7 @@ class SetGameScore extends Method
     }
 
     /**
-     * Pass True, if the game message should not be automatically edited to include the current scoreboard
+     * Pass *True*, if the game message should not be automatically edited to include the current scoreboard
      *
      * @param bool|null $disableEditMessage
      * @return self

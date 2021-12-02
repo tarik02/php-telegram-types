@@ -19,7 +19,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'sendPoll';
     }
@@ -94,7 +94,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
     }
 
     /**
-     * True, if the poll needs to be anonymous, defaults to *True*
+     * *True*, if the poll needs to be anonymous, defaults to *True*
      *
      * @return bool|null
      */
@@ -104,7 +104,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
     }
 
     /**
-     * True, if the poll needs to be anonymous, defaults to *True*
+     * *True*, if the poll needs to be anonymous, defaults to *True*
      *
      * @param bool|null $isAnonymous
      * @return self
@@ -140,7 +140,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
     }
 
     /**
-     * True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to *False*
+     * *True*, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to *False*
      *
      * @return bool|null
      */
@@ -150,7 +150,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
     }
 
     /**
-     * True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to *False*
+     * *True*, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to *False*
      *
      * @param bool|null $allowsMultipleAnswers
      * @return self
@@ -232,7 +232,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
     }
 
     /**
-     * List of special entities that appear in the poll explanation, which can be specified instead of *parse\_mode*
+     * A JSON-serialized list of special entities that appear in the poll explanation, which can be specified instead of *parse\_mode*
      *
      * @return \Tarik02\Telegram\Collections\MessageEntityCollection|null
      */
@@ -245,7 +245,7 @@ class SendPoll extends Method implements \Tarik02\Telegram\Methods\HasRequiredCh
     }
 
     /**
-     * List of special entities that appear in the poll explanation, which can be specified instead of *parse\_mode*
+     * A JSON-serialized list of special entities that appear in the poll explanation, which can be specified instead of *parse\_mode*
      *
      * @param \Tarik02\Telegram\Collections\MessageEntityCollection|null $explanationEntities
      * @return self

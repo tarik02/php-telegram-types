@@ -38,7 +38,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if this user is a bot
+     * *True*, if this user is a bot
      *
      * @return bool
      */
@@ -48,7 +48,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if this user is a bot
+     * *True*, if this user is a bot
      *
      * @param bool $isBot
      * @return self
@@ -153,7 +153,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
+     * *Optional*. *True*, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
      *
      * @return bool|null
      */
@@ -163,7 +163,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
+     * *Optional*. *True*, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
      *
      * @param bool|null $canJoinGroups
      * @return self
@@ -176,7 +176,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if [privacy mode](https://core.telegram.org/bots#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
+     * *Optional*. *True*, if [privacy mode](https://core.telegram.org/bots#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
      *
      * @return bool|null
      */
@@ -186,7 +186,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if [privacy mode](https://core.telegram.org/bots#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
+     * *Optional*. *True*, if [privacy mode](https://core.telegram.org/bots#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
      *
      * @param bool|null $canReadAllGroupMessages
      * @return self
@@ -199,7 +199,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
+     * *Optional*. *True*, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
      *
      * @return bool|null
      */
@@ -209,7 +209,7 @@ class User implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
+     * *Optional*. *True*, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
      *
      * @param bool|null $supportsInlineQueries
      * @return self

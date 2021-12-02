@@ -312,7 +312,7 @@ class Chat implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
+     * *Optional*. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user; in seconds. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
      *
      * @return int|null
      */
@@ -322,7 +322,7 @@ class Chat implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
+     * *Optional*. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user; in seconds. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
      *
      * @param int|null $slowModeDelay
      * @return self
@@ -381,7 +381,7 @@ class Chat implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the bot can change the group sticker set. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
+     * *Optional*. *True*, if the bot can change the group sticker set. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
      *
      * @return bool|null
      */
@@ -391,7 +391,7 @@ class Chat implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. True, if the bot can change the group sticker set. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
+     * *Optional*. *True*, if the bot can change the group sticker set. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
      *
      * @param bool|null $canSetStickerSet
      * @return self

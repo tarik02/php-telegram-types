@@ -17,7 +17,7 @@ class GetStickerSet extends Method
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'getStickerSet';
     }

@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class SetChatDescription
  *
- * Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns *True* on success.
+ * Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#setchatdescription
@@ -19,7 +19,7 @@ class SetChatDescription extends Method implements \Tarik02\Telegram\Methods\Has
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'setChatDescription';
     }

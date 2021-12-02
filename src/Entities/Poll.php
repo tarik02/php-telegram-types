@@ -107,7 +107,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the poll is closed
+     * *True*, if the poll is closed
      *
      * @return bool
      */
@@ -117,7 +117,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the poll is closed
+     * *True*, if the poll is closed
      *
      * @param bool $isClosed
      * @return self
@@ -130,7 +130,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the poll is anonymous
+     * *True*, if the poll is anonymous
      *
      * @return bool
      */
@@ -140,7 +140,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the poll is anonymous
+     * *True*, if the poll is anonymous
      *
      * @param bool $isAnonymous
      * @return self
@@ -176,7 +176,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the poll allows multiple answers
+     * *True*, if the poll allows multiple answers
      *
      * @return bool
      */
@@ -186,7 +186,7 @@ class Poll implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * True, if the poll allows multiple answers
+     * *True*, if the poll allows multiple answers
      *
      * @param bool $allowsMultipleAnswers
      * @return self

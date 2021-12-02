@@ -19,7 +19,7 @@ class SetChatAdministratorCustomTitle extends Method implements \Tarik02\Telegra
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'setChatAdministratorCustomTitle';
     }

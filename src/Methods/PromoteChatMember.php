@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class PromoteChatMember
  *
- * Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Pass *False* for all boolean parameters to demote a user. Returns *True* on success.
+ * Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Pass *False* for all boolean parameters to demote a user. Returns *True* on success.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#promotechatmember
@@ -19,7 +19,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'promoteChatMember';
     }
@@ -94,7 +94,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can access the chat event log, chat statistics, message statistics in channels, see channel members, see anonymous administrators in supergroups and ignore slow mode. Implied by any other administrator privilege
+     * Pass *True*, if the administrator can access the chat event log, chat statistics, message statistics in channels, see channel members, see anonymous administrators in supergroups and ignore slow mode. Implied by any other administrator privilege
      *
      * @return bool|null
      */
@@ -104,7 +104,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can access the chat event log, chat statistics, message statistics in channels, see channel members, see anonymous administrators in supergroups and ignore slow mode. Implied by any other administrator privilege
+     * Pass *True*, if the administrator can access the chat event log, chat statistics, message statistics in channels, see channel members, see anonymous administrators in supergroups and ignore slow mode. Implied by any other administrator privilege
      *
      * @param bool|null $canManageChat
      * @return self
@@ -117,7 +117,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can create channel posts, channels only
+     * Pass *True*, if the administrator can create channel posts, channels only
      *
      * @return bool|null
      */
@@ -127,7 +127,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can create channel posts, channels only
+     * Pass *True*, if the administrator can create channel posts, channels only
      *
      * @param bool|null $canPostMessages
      * @return self
@@ -140,7 +140,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can edit messages of other users and can pin messages, channels only
+     * Pass *True*, if the administrator can edit messages of other users and can pin messages, channels only
      *
      * @return bool|null
      */
@@ -150,7 +150,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can edit messages of other users and can pin messages, channels only
+     * Pass *True*, if the administrator can edit messages of other users and can pin messages, channels only
      *
      * @param bool|null $canEditMessages
      * @return self
@@ -163,7 +163,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can delete messages of other users
+     * Pass *True*, if the administrator can delete messages of other users
      *
      * @return bool|null
      */
@@ -173,7 +173,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can delete messages of other users
+     * Pass *True*, if the administrator can delete messages of other users
      *
      * @param bool|null $canDeleteMessages
      * @return self
@@ -186,7 +186,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can manage voice chats, supergroups only
+     * Pass *True*, if the administrator can manage voice chats
      *
      * @return bool|null
      */
@@ -196,7 +196,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can manage voice chats, supergroups only
+     * Pass *True*, if the administrator can manage voice chats
      *
      * @param bool|null $canManageVoiceChats
      * @return self
@@ -209,7 +209,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can restrict, ban or unban chat members
+     * Pass *True*, if the administrator can restrict, ban or unban chat members
      *
      * @return bool|null
      */
@@ -219,7 +219,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can restrict, ban or unban chat members
+     * Pass *True*, if the administrator can restrict, ban or unban chat members
      *
      * @param bool|null $canRestrictMembers
      * @return self
@@ -232,7 +232,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can add new administrators with a subset of their own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him)
+     * Pass *True*, if the administrator can add new administrators with a subset of their own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him)
      *
      * @return bool|null
      */
@@ -242,7 +242,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can add new administrators with a subset of their own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him)
+     * Pass *True*, if the administrator can add new administrators with a subset of their own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him)
      *
      * @param bool|null $canPromoteMembers
      * @return self
@@ -255,7 +255,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can change chat title, photo and other settings
+     * Pass *True*, if the administrator can change chat title, photo and other settings
      *
      * @return bool|null
      */
@@ -265,7 +265,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can change chat title, photo and other settings
+     * Pass *True*, if the administrator can change chat title, photo and other settings
      *
      * @param bool|null $canChangeInfo
      * @return self
@@ -278,7 +278,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can invite new users to the chat
+     * Pass *True*, if the administrator can invite new users to the chat
      *
      * @return bool|null
      */
@@ -288,7 +288,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can invite new users to the chat
+     * Pass *True*, if the administrator can invite new users to the chat
      *
      * @param bool|null $canInviteUsers
      * @return self
@@ -301,7 +301,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can pin messages, supergroups only
+     * Pass *True*, if the administrator can pin messages, supergroups only
      *
      * @return bool|null
      */
@@ -311,7 +311,7 @@ class PromoteChatMember extends Method implements \Tarik02\Telegram\Methods\HasR
     }
 
     /**
-     * Pass True, if the administrator can pin messages, supergroups only
+     * Pass *True*, if the administrator can pin messages, supergroups only
      *
      * @param bool|null $canPinMessages
      * @return self

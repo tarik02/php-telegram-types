@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class StopMessageLiveLocation
  *
- * Use this method to stop updating a live location message before *live\_period* expires. On success, if the message was sent by the bot, the sent [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned.
+ * Use this method to stop updating a live location message before *live\_period* expires. On success, if the message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#stopmessagelivelocation
@@ -17,7 +17,7 @@ class StopMessageLiveLocation extends Method
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'stopMessageLiveLocation';
     }

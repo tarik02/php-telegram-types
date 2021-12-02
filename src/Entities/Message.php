@@ -1405,6 +1405,36 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
+     * *Optional*. Service message: voice chat scheduled
+     *
+     * @return \Tarik02\Telegram\Entities\VoiceChatScheduled|null
+     */
+    public function voiceChatScheduled(): ?\Tarik02\Telegram\Entities\VoiceChatScheduled
+    {
+        if (($this->payload['voice_chat_scheduled'] ?? null) === null) {
+            return null;
+        }
+        return \Tarik02\Telegram\Entities\VoiceChatScheduled::fromPayload($this->payload['voice_chat_scheduled']);
+    }
+
+    /**
+     * *Optional*. Service message: voice chat scheduled
+     *
+     * @param \Tarik02\Telegram\Entities\VoiceChatScheduled|null $voiceChatScheduled
+     * @return self
+     */
+    public function withVoiceChatScheduled(?\Tarik02\Telegram\Entities\VoiceChatScheduled $voiceChatScheduled): self
+    {
+        $payload = $this->payload;
+        if ($voiceChatScheduled !== null) {
+            $payload['voice_chat_scheduled'] = $voiceChatScheduled->toPayload();
+        } else {
+            unset($payload['voice_chat_scheduled']);
+        }
+        return new self($payload);
+    }
+
+    /**
      * *Optional*. Service message: voice chat started
      *
      * @return \Tarik02\Telegram\Entities\VoiceChatStarted|null

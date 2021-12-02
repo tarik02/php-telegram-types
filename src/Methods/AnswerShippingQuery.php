@@ -7,7 +7,7 @@ namespace Tarik02\Telegram\Methods;
 /**
  * Class AnswerShippingQuery
  *
- * If you sent an invoice requesting a shipping address and the parameter *is\_flexible* was specified, the Bot API will send an [Update](https://core.telegram.org/bots/api/#update) with a *shipping\_query* field to the bot. Use this method to reply to shipping queries. On success, True is returned.
+ * If you sent an invoice requesting a shipping address and the parameter *is\_flexible* was specified, the Bot API will send an [Update](https://core.telegram.org/bots/api/#update) with a *shipping\_query* field to the bot. Use this method to reply to shipping queries. On success, *True* is returned.
  *
  * @package Tarik02\Telegram\Methods
  * @link https://core.telegram.org/bots/api/#answershippingquery
@@ -17,7 +17,7 @@ class AnswerShippingQuery extends Method
     /**
      * @return string
      */
-    public function name(): string
+    public function methodName(): string
     {
         return 'answerShippingQuery';
     }
@@ -46,7 +46,7 @@ class AnswerShippingQuery extends Method
     }
 
     /**
-     * Specify True if delivery to the specified address is possible and False if there are any problems (for example, if delivery to the specified address is not possible)
+     * Specify *True* if delivery to the specified address is possible and False if there are any problems (for example, if delivery to the specified address is not possible)
      *
      * @return bool
      */
@@ -56,7 +56,7 @@ class AnswerShippingQuery extends Method
     }
 
     /**
-     * Specify True if delivery to the specified address is possible and False if there are any problems (for example, if delivery to the specified address is not possible)
+     * Specify *True* if delivery to the specified address is possible and False if there are any problems (for example, if delivery to the specified address is not possible)
      *
      * @param bool $ok
      * @return self
@@ -69,7 +69,7 @@ class AnswerShippingQuery extends Method
     }
 
     /**
-     * Required if *ok* is True. A JSON-serialized array of available shipping options.
+     * Required if *ok* is *True*. A JSON-serialized array of available shipping options.
      *
      * @return \Tarik02\Telegram\Collections\ShippingOptionCollection|null
      */
@@ -82,7 +82,7 @@ class AnswerShippingQuery extends Method
     }
 
     /**
-     * Required if *ok* is True. A JSON-serialized array of available shipping options.
+     * Required if *ok* is *True*. A JSON-serialized array of available shipping options.
      *
      * @param \Tarik02\Telegram\Collections\ShippingOptionCollection|null $shippingOptions
      * @return self
