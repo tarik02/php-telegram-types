@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\ChatMemberAdministrator
  */
-final class ChatMemberAdministratorCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class ChatMemberAdministratorCollection extends \Tarik02\Telegram\Collections\ChatMemberCollection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\ChatMemberAdministrator

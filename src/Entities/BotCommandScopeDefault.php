@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#botcommandscopedefault
  */
-class BotCommandScopeDefault implements \Tarik02\Telegram\Entities\BotCommandScope
+class BotCommandScopeDefault extends \Tarik02\Telegram\Entities\BotCommandScope implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Scope type, must be *default*

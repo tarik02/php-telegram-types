@@ -94,6 +94,29 @@ class ForwardMessage extends Method implements \Tarik02\Telegram\Methods\HasRequ
     }
 
     /**
+     * Protects the contents of the forwarded message from forwarding and saving
+     *
+     * @return bool|null
+     */
+    public function protectContent(): bool
+    {
+        return $this->payload['protect_content'] ?? false;
+    }
+
+    /**
+     * Protects the contents of the forwarded message from forwarding and saving
+     *
+     * @param bool|null $protectContent
+     * @return self
+     */
+    public function withProtectContent(bool $protectContent): self
+    {
+        $payload = $this->payload;
+        $payload['protect_content'] = $protectContent;
+        return new self($payload);
+    }
+
+    /**
      * Message identifier in the chat specified in *from\_chat\_id*
      *
      * @return int

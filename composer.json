@@ -8,7 +8,7 @@
     "extra": {
         "telegram-api": {
             "template": "https://raw.githubusercontent.com/ark0f/tg-bot-api/%s/custom.json",
-            "version": "383d616bff127413312593c2be5aee2b13303d7d"
+            "version": "68421f60bc5f691aeab817d8be8493c80cddab8d"
         }
     },
     "require": {

@@ -38,7 +38,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Sender, empty for messages sent to channels
+     * *Optional*. Sender of the message; empty for messages sent to channels. For backward compatibility, the field contains a fake sender user in non-channel chats, if the message was sent on behalf of a chat.
      *
      * @return \Tarik02\Telegram\Entities\User|null
      */
@@ -51,7 +51,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Sender, empty for messages sent to channels
+     * *Optional*. Sender of the message; empty for messages sent to channels. For backward compatibility, the field contains a fake sender user in non-channel chats, if the message was sent on behalf of a chat.
      *
      * @param \Tarik02\Telegram\Entities\User|null $from
      * @return self
@@ -68,7 +68,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Sender of the message, sent on behalf of a chat. The channel itself for channel messages. The supergroup itself for messages from anonymous group administrators. The linked channel for messages automatically forwarded to the discussion group
+     * *Optional*. Sender of the message, sent on behalf of a chat. For example, the channel itself for channel posts, the supergroup itself for messages from anonymous group administrators, the linked channel for messages automatically forwarded to the discussion group. For backward compatibility, the field *from* contains a fake sender user in non-channel chats, if the message was sent on behalf of a chat.
      *
      * @return \Tarik02\Telegram\Entities\Chat|null
      */
@@ -81,7 +81,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. Sender of the message, sent on behalf of a chat. The channel itself for channel messages. The supergroup itself for messages from anonymous group administrators. The linked channel for messages automatically forwarded to the discussion group
+     * *Optional*. Sender of the message, sent on behalf of a chat. For example, the channel itself for channel posts, the supergroup itself for messages from anonymous group administrators, the linked channel for messages automatically forwarded to the discussion group. For backward compatibility, the field *from* contains a fake sender user in non-channel chats, if the message was sent on behalf of a chat.
      *
      * @param \Tarik02\Telegram\Entities\Chat|null $senderChat
      * @return self
@@ -227,7 +227,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. For messages forwarded from channels, signature of the post author if present
+     * *Optional*. For forwarded messages that were originally sent in channels or by an anonymous chat administrator, signature of the message sender if present
      *
      * @return string|null
      */
@@ -237,7 +237,7 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. For messages forwarded from channels, signature of the post author if present
+     * *Optional*. For forwarded messages that were originally sent in channels or by an anonymous chat administrator, signature of the message sender if present
      *
      * @param string|null $forwardSignature
      * @return self
@@ -292,6 +292,29 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
     {
         $payload = $this->payload;
         $payload['forward_date'] = $forwardDate;
+        return new self($payload);
+    }
+
+    /**
+     * *Optional*. True, if the message is a channel post that was automatically forwarded to the connected discussion group
+     *
+     * @return bool|null
+     */
+    public function isAutomaticForward(): bool
+    {
+        return $this->payload['is_automatic_forward'] ?? false;
+    }
+
+    /**
+     * *Optional*. True, if the message is a channel post that was automatically forwarded to the connected discussion group
+     *
+     * @param bool|null $isAutomaticForward
+     * @return self
+     */
+    public function withIsAutomaticForward(bool $isAutomaticForward): self
+    {
+        $payload = $this->payload;
+        $payload['is_automatic_forward'] = $isAutomaticForward;
         return new self($payload);
     }
 
@@ -375,6 +398,29 @@ class Message implements \Tarik02\Telegram\Contracts\Payloadable
     {
         $payload = $this->payload;
         $payload['edit_date'] = $editDate;
+        return new self($payload);
+    }
+
+    /**
+     * *Optional*. True, if the message can't be forwarded
+     *
+     * @return bool|null
+     */
+    public function hasProtectedContent(): bool
+    {
+        return $this->payload['has_protected_content'] ?? false;
+    }
+
+    /**
+     * *Optional*. True, if the message can't be forwarded
+     *
+     * @param bool|null $hasProtectedContent
+     * @return self
+     */
+    public function withHasProtectedContent(bool $hasProtectedContent): self
+    {
+        $payload = $this->payload;
+        $payload['has_protected_content'] = $hasProtectedContent;
         return new self($payload);
     }
 

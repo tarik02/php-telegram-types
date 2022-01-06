@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#botcommandscopeallprivatechats
  */
-class BotCommandScopeAllPrivateChats implements \Tarik02\Telegram\Entities\BotCommandScope
+class BotCommandScopeAllPrivateChats extends \Tarik02\Telegram\Entities\BotCommandScope implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Scope type, must be *all\_private\_chats*

@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#chatmemberbanned
  */
-class ChatMemberBanned implements \Tarik02\Telegram\Entities\ChatMember
+class ChatMemberBanned extends \Tarik02\Telegram\Entities\ChatMember implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * The member's status in the chat, always “kicked”

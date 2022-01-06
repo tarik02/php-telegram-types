@@ -206,6 +206,29 @@ class Chat implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
+     * *Optional*. True, if privacy settings of the other party in the private chat allows to use `tg://user?id=<user_id>` links only in chats with the user. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
+     *
+     * @return bool|null
+     */
+    public function hasPrivateForwards(): bool
+    {
+        return $this->payload['has_private_forwards'] ?? false;
+    }
+
+    /**
+     * *Optional*. True, if privacy settings of the other party in the private chat allows to use `tg://user?id=<user_id>` links only in chats with the user. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
+     *
+     * @param bool|null $hasPrivateForwards
+     * @return self
+     */
+    public function withHasPrivateForwards(bool $hasPrivateForwards): self
+    {
+        $payload = $this->payload;
+        $payload['has_private_forwards'] = $hasPrivateForwards;
+        return new self($payload);
+    }
+
+    /**
      * *Optional*. Description, for groups, supergroups and channel chats. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
      *
      * @return string|null
@@ -354,6 +377,29 @@ class Chat implements \Tarik02\Telegram\Contracts\Payloadable
     {
         $payload = $this->payload;
         $payload['message_auto_delete_time'] = $messageAutoDeleteTime;
+        return new self($payload);
+    }
+
+    /**
+     * *Optional*. True, if messages from the chat can't be forwarded to other chats. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
+     *
+     * @return bool|null
+     */
+    public function hasProtectedContent(): bool
+    {
+        return $this->payload['has_protected_content'] ?? false;
+    }
+
+    /**
+     * *Optional*. True, if messages from the chat can't be forwarded to other chats. Returned only in [getChat](https://core.telegram.org/bots/api/#getchat).
+     *
+     * @param bool|null $hasProtectedContent
+     * @return self
+     */
+    public function withHasProtectedContent(bool $hasProtectedContent): self
+    {
+        $payload = $this->payload;
+        $payload['has_protected_content'] = $hasProtectedContent;
         return new self($payload);
     }
 

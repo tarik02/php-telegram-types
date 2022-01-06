@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\InlineKeyboardMarkup
  */
-final class InlineKeyboardMarkupCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class InlineKeyboardMarkupCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\InlineKeyboardMarkup

@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#inputinvoicemessagecontent
  */
-class InputInvoiceMessageContent implements \Tarik02\Telegram\Entities\InputMessageContent
+class InputInvoiceMessageContent extends \Tarik02\Telegram\Entities\InputMessageContent implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Product name, 1-32 characters

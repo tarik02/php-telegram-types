@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#inputvenuemessagecontent
  */
-class InputVenueMessageContent implements \Tarik02\Telegram\Entities\InputMessageContent
+class InputVenueMessageContent extends \Tarik02\Telegram\Entities\InputMessageContent implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Latitude of the venue in degrees

@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#passportelementerrorunspecified
  */
-class PassportElementErrorUnspecified implements \Tarik02\Telegram\Entities\PassportElementError
+class PassportElementErrorUnspecified extends \Tarik02\Telegram\Entities\PassportElementError implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Error source, must be *unspecified*

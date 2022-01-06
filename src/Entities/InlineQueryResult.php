@@ -26,7 +26,7 @@ abstract class InlineQueryResult implements \Tarik02\Telegram\Contracts\Payloada
      * @param array $payload
      * @return self
      */
-    public static function fromPayload($payload): self
+    public static function fromPayload(array $payload): self
     {
         $key = $payload['type'] ?? null;
 

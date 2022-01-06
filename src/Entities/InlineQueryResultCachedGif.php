@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#inlinequeryresultcachedgif
  */
-class InlineQueryResultCachedGif implements \Tarik02\Telegram\Entities\InlineQueryResult
+class InlineQueryResultCachedGif extends \Tarik02\Telegram\Entities\InlineQueryResult implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Type of the result, must be *gif*

@@ -38,7 +38,7 @@ class InlineKeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. HTTP or tg:// url to be opened when button is pressed
+     * *Optional*. HTTP or tg:// url to be opened when the button is pressed. Links `tg://user?id=<user_id>` can be used to mention a user by their ID without using a username, if this is allowed by their privacy settings.
      *
      * @return string|null
      */
@@ -48,7 +48,7 @@ class InlineKeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * *Optional*. HTTP or tg:// url to be opened when button is pressed
+     * *Optional*. HTTP or tg:// url to be opened when the button is pressed. Links `tg://user?id=<user_id>` can be used to mention a user by their ID without using a username, if this is allowed by their privacy settings.
      *
      * @param string|null $url
      * @return self
@@ -204,7 +204,7 @@ class InlineKeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
     /**
      * *Optional*. Specify *True*, to send a [Pay button](https://core.telegram.org/bots/api/#payments).  
      * 
-     * **NOTE:** This type of button **must** always be the first button in the first row.
+     * **NOTE:** This type of button **must** always be the first button in the first row and can only be used in invoice messages.
      *
      * @return bool|null
      */
@@ -216,7 +216,7 @@ class InlineKeyboardButton implements \Tarik02\Telegram\Contracts\Payloadable
     /**
      * *Optional*. Specify *True*, to send a [Pay button](https://core.telegram.org/bots/api/#payments).  
      * 
-     * **NOTE:** This type of button **must** always be the first button in the first row.
+     * **NOTE:** This type of button **must** always be the first button in the first row and can only be used in invoice messages.
      *
      * @param bool|null $pay
      * @return self

@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\PassportElementErrorReverseSide
  */
-final class PassportElementErrorReverseSideCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class PassportElementErrorReverseSideCollection extends \Tarik02\Telegram\Collections\PassportElementErrorCollection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\PassportElementErrorReverseSide

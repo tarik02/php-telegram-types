@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#passportelementerrortranslationfiles
  */
-class PassportElementErrorTranslationFiles implements \Tarik02\Telegram\Entities\PassportElementError
+class PassportElementErrorTranslationFiles extends \Tarik02\Telegram\Entities\PassportElementError implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Error source, must be *translation\_files*

@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\InputTextMessageContent
  */
-final class InputTextMessageContentCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class InputTextMessageContentCollection extends \Tarik02\Telegram\Collections\InputMessageContentCollection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\InputTextMessageContent

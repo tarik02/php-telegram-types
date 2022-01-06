@@ -26,7 +26,7 @@ abstract class BotCommandScope implements \Tarik02\Telegram\Contracts\Payloadabl
      * @param array $payload
      * @return self
      */
-    public static function fromPayload($payload): self
+    public static function fromPayload(array $payload): self
     {
         $key = $payload['type'] ?? null;
 

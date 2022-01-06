@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\InputMediaPhoto
  */
-final class InputMediaPhotoCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class InputMediaPhotoCollection extends \Tarik02\Telegram\Collections\InputMediaCollection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\InputMediaPhoto

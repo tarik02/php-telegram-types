@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\MaskPosition
  */
-final class MaskPositionCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class MaskPositionCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\MaskPosition

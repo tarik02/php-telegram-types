@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\InlineQueryResultContact
  */
-final class InlineQueryResultContactCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class InlineQueryResultContactCollection extends \Tarik02\Telegram\Collections\InlineQueryResultCollection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\InlineQueryResultContact

@@ -309,6 +309,24 @@ trait CallsMethods
     }
 
     /**
+     * @param \Tarik02\Telegram\Methods\BanChatSenderChat $method
+     * @return bool
+     */
+    public function banChatSenderChat(\Tarik02\Telegram\Methods\BanChatSenderChat $method): bool
+    {
+        return $this->call($method);
+    }
+
+    /**
+     * @param \Tarik02\Telegram\Methods\UnbanChatSenderChat $method
+     * @return bool
+     */
+    public function unbanChatSenderChat(\Tarik02\Telegram\Methods\UnbanChatSenderChat $method): bool
+    {
+        return $this->call($method);
+    }
+
+    /**
      * @param \Tarik02\Telegram\Methods\SetChatPermissions $method
      * @return bool
      */

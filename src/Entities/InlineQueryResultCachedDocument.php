@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#inlinequeryresultcacheddocument
  */
-class InlineQueryResultCachedDocument implements \Tarik02\Telegram\Entities\InlineQueryResult
+class InlineQueryResultCachedDocument extends \Tarik02\Telegram\Entities\InlineQueryResult implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Type of the result, must be *document*

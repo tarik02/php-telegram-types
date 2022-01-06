@@ -216,6 +216,18 @@ interface CallsMethods
     public function setChatAdministratorCustomTitle(\Tarik02\Telegram\Methods\SetChatAdministratorCustomTitle $method): bool;
 
     /**
+     * @param \Tarik02\Telegram\Methods\BanChatSenderChat $method
+     * @return bool
+     */
+    public function banChatSenderChat(\Tarik02\Telegram\Methods\BanChatSenderChat $method): bool;
+
+    /**
+     * @param \Tarik02\Telegram\Methods\UnbanChatSenderChat $method
+     * @return bool
+     */
+    public function unbanChatSenderChat(\Tarik02\Telegram\Methods\UnbanChatSenderChat $method): bool;
+
+    /**
      * @param \Tarik02\Telegram\Methods\SetChatPermissions $method
      * @return bool
      */

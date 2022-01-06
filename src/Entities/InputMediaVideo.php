@@ -12,7 +12,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#inputmediavideo
  */
-class InputMediaVideo implements \Tarik02\Telegram\Entities\InputMedia
+class InputMediaVideo extends \Tarik02\Telegram\Entities\InputMedia implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Type of the result, must be *video*

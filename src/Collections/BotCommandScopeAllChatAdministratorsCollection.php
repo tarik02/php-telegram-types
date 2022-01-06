@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\BotCommandScopeAllChatAdministrators
  */
-final class BotCommandScopeAllChatAdministratorsCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class BotCommandScopeAllChatAdministratorsCollection extends \Tarik02\Telegram\Collections\BotCommandScopeCollection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\BotCommandScopeAllChatAdministrators

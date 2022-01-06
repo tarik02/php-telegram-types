@@ -14,7 +14,7 @@ namespace Tarik02\Telegram\Entities;
  * @package Tarik02\Telegram\Entities
  * @link https://core.telegram.org/bots/api/#inlinequeryresultvideo
  */
-class InlineQueryResultVideo implements \Tarik02\Telegram\Entities\InlineQueryResult
+class InlineQueryResultVideo extends \Tarik02\Telegram\Entities\InlineQueryResult implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * Type of the result, must be *video*

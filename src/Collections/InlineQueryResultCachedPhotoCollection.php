@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\InlineQueryResultCachedPhoto
  */
-final class InlineQueryResultCachedPhotoCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class InlineQueryResultCachedPhotoCollection extends \Tarik02\Telegram\Collections\InlineQueryResultCollection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\InlineQueryResultCachedPhoto

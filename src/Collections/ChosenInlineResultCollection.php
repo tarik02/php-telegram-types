@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\ChosenInlineResult
  */
-final class ChosenInlineResultCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class ChosenInlineResultCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\ChosenInlineResult

@@ -18,7 +18,7 @@ namespace Tarik02\Telegram\Collections;
  * @package Tarik02\Telegram\Collections
  * @see \Tarik02\Telegram\Entities\InlineQueryResultCachedMpeg4Gif
  */
-final class InlineQueryResultCachedMpeg4GifCollection extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class InlineQueryResultCachedMpeg4GifCollection extends \Tarik02\Telegram\Collections\InlineQueryResultCollection implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * @return \Tarik02\Telegram\Entities\InlineQueryResultCachedMpeg4Gif

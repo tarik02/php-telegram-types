@@ -15,7 +15,7 @@ namespace Tarik02\Telegram\Entities;
 class BotCommand implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
-     * Text of the command, 1-32 characters. Can contain only lowercase English letters, digits and underscores.
+     * Text of the command; 1-32 characters. Can contain only lowercase English letters, digits and underscores.
      *
      * @return string
      */
@@ -25,7 +25,7 @@ class BotCommand implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * Text of the command, 1-32 characters. Can contain only lowercase English letters, digits and underscores.
+     * Text of the command; 1-32 characters. Can contain only lowercase English letters, digits and underscores.
      *
      * @param string $command
      * @return self
@@ -38,7 +38,7 @@ class BotCommand implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * Description of the command, 3-256 characters.
+     * Description of the command; 1-256 characters.
      *
      * @return string
      */
@@ -48,7 +48,7 @@ class BotCommand implements \Tarik02\Telegram\Contracts\Payloadable
     }
 
     /**
-     * Description of the command, 3-256 characters.
+     * Description of the command; 1-256 characters.
      *
      * @param string $description
      * @return self
