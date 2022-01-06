@@ -19,10 +19,15 @@ jobs:
         fetch-depth: 0
 
     - name: 'Composer'
-      uses: php-actions/composer@v5
+      uses: php-actions/composer@v6
+      with:
+        php_version: 7.4
 
     - name: 'Generate code'
-      run: composer generate
+      uses: php-actions/composer@v6
+      with:
+        php_version: 7.4
+        command: generate
 
     - name: 'Push to artifacts branch'
       if: success() && startsWith(github.ref, 'refs/tags/source/v')
