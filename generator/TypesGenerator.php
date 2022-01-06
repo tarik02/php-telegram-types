@@ -91,6 +91,7 @@ final class TypesGenerator
         $this->generateCollection(
             'InputFileCollection',
             '\Tarik02\Telegram\Entities\InputFile',
+            null,
             'Collections/InputFileCollection'
         );
 
@@ -158,7 +159,11 @@ final class TypesGenerator
 
                 $this->generateCollection(
                     $entity['name'] . 'Collection',
-                    '\Tarik02\Telegram\Entities\\' . $entity['name']
+                    '\Tarik02\Telegram\Entities\\' . $entity['name'],
+                    (isset($this->parentEntityMap[$entity['name']])
+                        ? '\Tarik02\Telegram\Collections\\' . $this->parentEntityMap[$entity['name']] . 'Collection'
+                        : null
+                    )
                 );
             } elseif ($entity['name'] === 'InputFile') {
                 $this->render(
@@ -209,6 +214,7 @@ final class TypesGenerator
                 [
                     'name' => $name,
                     'item' => $item['item'],
+                    'parent' => $item['parent'],
                     'hasHigherOrderCollection' => isset($this->generatedCollections[$name . 'Collection']),
                 ]
             );
@@ -328,17 +334,20 @@ final class TypesGenerator
     }
 
     /**
+     * @param string $entity
      * @param string $name
      * @param string $item
+     * @param string|null $parent
      * @param string $template
      * @return string
      */
-    public function generateCollection(string $name, string $item, string $template = 'Collections/Collection'): string
+    public function generateCollection(string $name, string $item, ?string $parent = null, string $template = 'Collections/Collection'): string
     {
         if (! isset($this->generatedCollections[$name])) {
             $this->generatedCollections[$name] = [
                 'item' => $item,
                 'template' => $template,
+                'parent' => $parent,
             ];
         }
 

@@ -19,7 +19,7 @@ use Illuminate\Support\Str;
  * {{ '@' }}package Tarik02\Telegram\Collections
  * {{ '@' }}see {{ $item }}
  */
-final class {{ $name }} extends Collection implements \Tarik02\Telegram\Contracts\Payloadable
+class {{ $name }} extends {{ $parent ?? 'Collection' }} implements \Tarik02\Telegram\Contracts\Payloadable
 {
     /**
      * {{ '@' }}return {{ $item }}

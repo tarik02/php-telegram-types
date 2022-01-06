@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
  * {{ '@' }}package Tarik02\Telegram\Entities
  * {{ '@' }}link {{ $entity['documentation_link'] }}
  */
-class {{ $entity['name'] }} implements {{ $parent ?? '\Tarik02\Telegram\Contracts\Payloadable' }}
+class {{ $entity['name'] }}{{ $parent ? ' extends ' . $parent : '' }} implements \Tarik02\Telegram\Contracts\Payloadable
 {
 @foreach ($entity['properties'] as $property)
     /**
